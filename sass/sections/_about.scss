@@ -1,0 +1,23 @@
+.about {
+    padding: 10rem 0;
+
+    .about-images {
+        .about-images-inner {
+            position: relative;
+            figure {
+                overflow: hidden;
+                border-radius: .5rem;
+            }
+    
+            img {
+                border-radius: .5rem;
+            }
+    
+        }
+    }
+    
+    .about-content {
+        padding-left: 8rem;
+    }
+
+}

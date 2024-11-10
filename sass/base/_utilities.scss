@@ -1,0 +1,66 @@
+@use "./variables" as *;
+
+.pre-text {
+    padding: 0.25rem 1rem;
+    border-radius: 2rem;
+    font-size: $base-size;
+    font-weight: bold;
+    display: inline-block;
+    font-weight: bold;
+    background-color: $color-primary;
+    display: inline-block;
+    margin-right: 1rem;
+
+    transform: rotate(80deg);
+    transform-origin: left;
+    opacity: 0;
+
+    @media (max-width: $bp-medium) {
+        transform: rotate(-10deg) translateY(-.5rem);
+        font-size: 2rme;
+        margin-right: .5rem;
+    }
+
+    &.scrolled {
+        animation: rotateAnimation 2s forwards;
+    }
+
+    span {
+        opacity: 0;
+        transition: all .4s;
+
+        &.scrolled {
+            opacity: 1;
+        }
+    }
+}
+
+.a-center {
+    text-align: center;
+}
+
+.mobile-last {
+    @media (max-width: $bp-medium) {
+        order: 10;
+    }
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(80deg);
+        opacity: 0;
+    }
+    30% {
+        transform: rotate(-33deg);
+        opacity: 1;
+    }
+
+    60% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-10deg);
+        opacity: 1;
+    }
+}

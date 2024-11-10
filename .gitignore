@@ -1,0 +1,11 @@
+# Ignore node modules
+node_modules/
+
+# Ignore Sass cache files (if generated)
+.sass-cache/
+
+# Ignore package lock file
+package-lock.json
+
+# Ignore ACF export JSON files
+# acf-export-*.json

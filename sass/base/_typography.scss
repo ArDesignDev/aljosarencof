@@ -1,0 +1,89 @@
+@use "./variables" as *;
+
+// Default settings for text elements
+td, th, a {
+    font-size: inherit;
+    color: $color-text;
+    font-size: $base-size;
+}
+
+// Remove default list styles
+ul, ol {
+    list-style: none;
+    padding: 0;
+
+    li {
+        font-size: $base-size;
+    }
+}
+
+// Paragraphs
+p {
+    font-size: $base-size;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $color-dark;
+    padding-bottom: 1rem;
+
+    &:last-of-type {
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: $bp-medium) {
+        font-size: 1.7rem;
+    }
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    line-height: 1.1;
+    color: $color-text;
+    font-family: $font-secondary;
+}
+
+h1 {
+    font-size: 6vw;
+    margin-bottom: 5rem;
+    font-weight: bold;
+
+    @media (max-width: $bp-medium) {
+        font-size: 4rem;
+    }
+}
+
+h2 {
+    font-size: 8rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+
+    @media (max-width: $bp-medium) {
+        font-size: 4.6rem;
+    }
+}
+
+h3 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+
+    @media (max-width: $bp-medium) {
+        font-size: 3rem;
+    }
+}
+
+h4 {
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+
+// Consistent font inheritance for links
+a {
+    display: inline-block;
+    font-size: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none; 
+    }
+}

@@ -1,0 +1,313 @@
+@use "../base/variables" as *;
+
+// button
+.btn {
+    a {
+        border: 2px solid $color-primary;
+        border-radius: 1rem;
+        padding: 1rem 4rem;
+        color: $color-primary;
+        font-size: $smaller-size;
+        border-radius: $border-radius;
+        position: relative;
+        transition: $transition;
+
+        @media (max-width: $bp-medium) {
+            font-size: 1.6rem;
+        }
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-dark;
+        }
+    }
+
+    &.btn-dark {
+        a {
+            color: $color-dark;
+            border: 2px solid $color-dark;
+
+            &:hover {
+                border-color: $color-primary;
+            }
+        }
+    }
+}
+
+// button arrow
+.btn-arrow {
+    a {
+        border: 2px solid $color-dark;
+        border-radius: 1rem;
+        padding: .75rem 4rem .75rem 2rem;
+        color: $color-dark !important;
+        font-size: $smaller-size;
+        border-radius: 2rem;
+        position: relative;
+        transition: $transition;
+
+        @media (max-width: $bp-medium) {
+            font-size: 1.6rem;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 2.5rem;
+            height: 1.5rem;
+            background-image: url(../images/arrow-right.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateY(-50%);
+        }
+
+        &:hover {
+            background-color: $color-primary;
+            border-color: $color-primary;
+        }
+    }
+}
+
+// button flip
+$speed: 0.75s;
+
+.btn-flip {
+    opacity: 1;
+    outline: 0;
+    color: #fff;
+    line-height: 1;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    max-width: 17rem;
+    font-size: $smaller-size;
+    display: block;
+    margin: 0 auto;
+    transform: rotate(-15deg);
+    margin-top: 10rem;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -6.5rem;
+        left: 0;
+        display: block;
+        width: 17rem;
+        height: 17rem;
+        display: block;
+        background: $color-dark;
+        border-radius: 50%;
+        opacity: 97%;
+        transition: all .37s ;
+        z-index: -1;
+    }
+
+    &:hover {
+        &::after {
+            transform: scale(1.1);
+            background: $color-secondary;
+        }
+    }
+}
+
+/* Initial styles for the front and back spans */
+.btn-flip .front,
+.btn-flip .back {
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    line-height: 1;
+    transition: 0.6s; 
+    backface-visibility: hidden;
+}
+
+/* Styling for the front text */
+.btn-flip .front {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+    color: #fff;
+}
+
+/* Styling for the back text */
+.btn-flip .back {
+    opacity: 0;
+    transform: translateY(-50%) rotateX(90deg);
+    color: #fff;
+}
+
+/* Hover effect to flip between front and back */
+.btn-flip:hover .front {
+    opacity: 0;
+    transform: translateY(50%) rotateX(90deg);
+}
+
+.btn-flip:hover .back {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+
+.btn-flip-green {
+    opacity: 1;
+    outline: 0;
+    color: #fff;
+    line-height: 1;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    max-width: 17rem;
+    font-size: $smaller-size;
+    display: block;
+    transform: rotate(-15deg);
+    margin-top: 10rem;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -6.5rem;
+        left: -.5rem;
+        display: block;
+        width: 17rem;
+        height: 17rem;
+        display: block;
+        background: $color-primary;
+        border-radius: 50%;
+        opacity: 97%;
+        transition: all .37s ;
+        z-index: -1;
+    }
+
+    &:hover {
+        &::after {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.btn-flip-green .front,
+.btn-flip-green .back {
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    line-height: 1;
+    transition: 0.6s; /* Replace $speed with actual transition duration */
+    backface-visibility: hidden;
+    width: 16rem;
+    font-weight: bold;
+    color: $color-dark;
+    background: $color-primary;
+}
+
+/* Styling for the front text */
+.btn-flip-green .front {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+
+/* Styling for the back text */
+.btn-flip-green .back {
+    opacity: 0;
+    transform: translateY(-50%) rotateX(90deg);
+}
+
+/* Hover effect to flip between front and back */
+.btn-flip-green:hover .front {
+    opacity: 0;
+    transform: translateY(50%) rotateX(90deg);
+}
+
+.btn-flip-green:hover .back {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+
+$transition: all 0.3s ease-out;
+
+// button link replace text
+.link {
+    height: 3rem;
+    align-items: center;
+    color: $color-dark;
+    text-decoration: none;
+    display: flex;
+    max-width: fit-content;
+
+    .mask {
+        position: relative;
+        padding: 0;
+        height: 3rem;
+        overflow: hidden;
+
+        .link-container {
+            transition: $transition;
+
+            .title {
+                display: block;
+                font-size: 2.2rem;
+                line-height: 2.2rem;
+                transition: $transition;
+                border-bottom: 1px solid $color-dark;
+                padding-bottom: .5rem;
+
+                &.link-title1 {
+                    transform-origin: right center;
+                }
+
+                &.link-title2 {
+                    transform-origin: left center;
+                    transform: rotate(20deg);
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .link-container {
+            transform: translateY(-3rem) !important;
+        }
+
+        .link-title1 {
+            transform: rotate(20deg) !important;
+        }
+
+        .link-title2 {
+            transform: rotate(0) !important;
+        }
+    }
+}
+
+// load more button
+.btn-load-more {
+    border: 2px solid $color-dark;
+    background-color: transparent;
+    border-radius: 2rem;
+    padding: 1.25rem 4rem;
+    color: $color-dark;
+    font-size: $smaller-size;
+    border-radius: 3rem;
+    transition: $transition;
+    margin: 3rem auto 4rem auto;
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-primary;
+        border-color: $color-primary;
+    }
+}

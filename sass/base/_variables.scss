@@ -1,0 +1,27 @@
+@use "./font" as *;
+
+// COLORS
+$color-primary: #2bd9e9;
+$color-secondary: #62bfc9;
+$color-dark: #222;
+$color-text: #222;
+$color-gray-light: #f4f4f4;
+
+// Font
+$font-primary: "Montserrat", sans-serif;
+$font-secondary: "Nurom Bold", sans-serif;
+
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 87.5em;  // 1400px
+$bp-large: 70em;  // 1040px
+$bp-medium: 50em;   // 800px
+$bp-small: 37.5em;  // 600px
+
+// TRANSITION
+$transition: all 0.4s ease-in-out;
+
+// sizes
+$base-size: 2rem;
+$smaller-size: 1.8rem;
+$border-radius: 3rem;

@@ -1,0 +1,21 @@
+{
+  "name": "underscores",
+  "version": "1.0.0",
+  "description": "Custom WordPress theme using only essential build tools.",
+  "author": "Aljoša Renčof",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "watch:sass": "concurrently \"sass --watch sass/main.scss:css/main.css --source-map --style=expanded\" \"sass --watch sass/main.scss:css/main.min.css --style=compressed && postcss css/main.min.css --use autoprefixer -o css/main.min.css\"",
+    "build:sass": "sass sass/main.scss css/main.css --source-map --style=expanded && sass sass/main.scss css/main.min.css --no-source-map --style=compressed && postcss css/main.min.css --use autoprefixer -o css/main.min.css",
+    "minify:js": "terser js/*.js --compress --mangle --output js/script.min.js --source-map",
+    "build": "npm run build:sass && npm run minify:js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.63.6",
+    "terser": "^5.14.2"
+  }
+}

@@ -1,0 +1,70 @@
+@use "../base/variables" as *;
+
+.footer {
+    background-color: $color-dark;
+    color: #fff;
+    padding: 10rem 4rem;
+    margin-top: 10rem;
+
+    @media (max-width: $bp-medium) {
+        text-align: center;
+        padding: 8rem 4rem 4rem;
+        margin-top: 4rem;
+    }
+
+    .footer-copy {
+        @media (max-width: $bp-medium) {
+            margin-top: 5rem;
+        }
+    }
+
+    p, a {
+        color: #fff;
+        font-size: 2rem;
+
+        @media (max-width: $bp-medium) {
+            font-size: 1.5rem;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    a {
+        text-transform: uppercase;
+        padding: 1.5rem;
+        transition: $transition;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    .footer-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: $bp-medium) {
+            flex-wrap: wrap;
+        }
+
+        a {
+            @media (max-width: $bp-medium) {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .footer-top {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        @media (max-width: $bp-medium) {
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+// Base styles
+@use "base/font";
+@use "base/variables";
+@use "base/base";
+@use "base/typography";
+@use "base/utilities";
+@use "base/mixins";
+
+// Layout styles
+@use "layout/header";
+@use "layout/footer";
+@use "layout/containers";
+@use "layout/grid";
+
+// Components
+@use "components/buttons";
+@use "components/forms";
+@use "components/accordion";
+
+// Sections (for standalone usage if needed)
+@use "sections/hero";
+@use "sections/section";
+@use "sections/categories-section";
+@use "sections/scrolling-banner";
+@use "sections/project";
+@use "sections/about";
+@use "sections/services";
+@use "sections/post-list";
+
+// Page-specific styles
+@use "pages/home";
+@use "pages/category";

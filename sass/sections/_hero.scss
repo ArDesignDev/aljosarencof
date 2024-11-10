@@ -1,0 +1,65 @@
+@use "../base/variables" as *;
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .hero-background {
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: none;
+        bottom: 0;
+        box-shadow: none;
+        height: 100%;
+        left: 0;
+        margin: 0;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        transform: scale(1);
+        animation: scaleAnimation 15s ease-in-out infinite; /* Adjust duration as needed */
+        transform-origin: center; /* Scale from the center */
+    }
+
+    .hero-content {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+
+        .hero-subtitle, .hero-title {
+            text-align: center;
+        }
+
+        .hero-title {
+            max-width: 120rem;
+            margin: 2rem auto;
+            color: #fff;
+        }
+
+        .hero-subtitle {
+            font-size: $smaller-size;
+            color: #fff;
+        }
+    }
+
+}
+
+
+@keyframes scaleAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2); /* Slight zoom-in */
+    }
+    100% {
+      transform: scale(1);
+    }
+}

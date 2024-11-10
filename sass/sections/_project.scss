@@ -1,0 +1,75 @@
+@use "../base/variables" as *;
+
+.project {
+    margin-bottom: 10rem;
+
+    &:nth-of-type(even) {
+
+        .project-video {
+            order: -1;
+        }
+
+        .project-content {
+            padding-left: 6rem;
+
+            @media (max-width: $bp-medium) {
+                padding-left: 0;
+            }
+        }
+    }
+
+    &:nth-of-type(odd) {
+
+        .project-video {
+            @media (max-width: $bp-medium) {
+                order: -1;
+            }
+        }
+
+        .project-content {
+            padding-right: 6rem;
+
+            @media (max-width: $bp-medium) {
+                padding-right: 0;
+            }
+        }
+    }
+
+    .project-content {
+
+        .project-title {
+            padding-top: 3rem;
+            padding-bottom: 0;
+            margin-bottom: 1rem;
+            border-top: 2px solid $color-dark;
+
+            @media (max-width: $bp-medium) {
+                border: none;
+            }
+        }
+
+        .project-desc {
+            p {
+                font-size: $smaller-size;
+                line-height: 1.2;
+            }
+        }
+
+        .project-info {
+            li {
+                font-size: $smaller-size;
+                padding-bottom: 1rem;
+
+                strong {
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+    .project-video {
+        video {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

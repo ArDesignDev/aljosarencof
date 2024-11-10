@@ -1,0 +1,76 @@
+@use "../base/variables" as *;
+
+.services {
+    padding: 12rem 0 12rem;
+    background-color: $color-gray-light;
+
+    .services-header {
+        text-align: center;
+        max-width: 110rem;
+        margin: 0 auto;
+    }
+
+    // nav
+    .services-nav {
+        display: flex;
+        justify-content: center;
+        margin: 8rem 0 6rem;
+        flex-wrap: wrap;
+
+        li {
+            padding: 0 2rem;
+            text-align: center;
+
+
+            a {
+                font-size: 1.8rem;
+                padding: 3rem 3rem 2rem;
+                border-radius: 1rem;
+                
+                .service-icon {
+                    height: 6rem;
+                    width: auto;
+                    object-fit: contain;
+                    text-align: center;
+                    display: blocK;
+                    margin: 0 auto 2rem auto;
+                    transition: $transition;
+                }
+
+                &:hover {
+                    .service-icon {
+                        transform: translateY(-1rem);
+                    }
+                }
+
+                &.active {
+                    background-color: #fff;
+                }
+            }
+        }
+
+
+    }
+
+    .services-list {
+        max-width: 110rem;
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 4rem;
+
+        .services-item {
+            display: none;
+            
+            p {
+                strong {
+                    font-size: 2.4rem;
+                }
+            }
+
+            &.active {
+                display: block;
+            }
+        }
+
+    }
+}

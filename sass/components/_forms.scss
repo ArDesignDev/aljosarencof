@@ -1,0 +1,259 @@
+@use "../base/variables" as *;
+
+// Form 7
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=date],
+.wpcf7-select,
+textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 5rem;
+    padding: 1.5rem 0;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    color: $color-dark;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid $color-dark;
+    border-radius: 0;
+
+    @media (max-width: $bp-medium) {
+        font-size: 1.4rem;
+        margin-top: 0;
+    }
+
+    &::placeholder {
+        color: #9b9b9b;
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 1;
+}
+
+
+.main-form-select {
+    position: relative;
+    display: block;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        pointer-events: none;
+        width: 1.4rem;
+        height: .5rem;
+        margin-top: -.25rem;
+        background-image: url(../img/icns/arrow-down.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+
+textarea {
+    height: 20rem;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 20rem;
+    min-height: 20rem;
+}
+
+input[type=checkbox] {
+    width: 2.6rem;
+    height: 2.6rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    transform: translateY(7px);
+}
+
+.wpcf7-form {
+
+    &::after {
+        display: table;
+        clear: both;
+    }
+    
+    .btn {
+        float: right;
+        height: 4.8rem;
+        position: relative;
+        text-align: left;
+        cursor: pointer;
+        margin-top: 0;
+
+        @media (max-width: $bp-medium) {
+            width: auto;
+        }
+
+        p {
+            padding-right: 0;
+        }
+
+        &::after {
+            content: "";
+            width: 1.5rem;
+            height: 2rem;
+            position: absolute;
+            top: 50%;
+            right: 2.5rem;
+            margin-top: -1rem;
+            background-image: url(../img/arrow-dark-right.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: $transition;
+            backface-visibility: hidden;
+    
+        }
+
+        &:hover {
+            &::after {
+                transform: translateX(.5rem);
+                backface-visibility: hidden;
+            }
+        }
+    }
+
+    &::after {
+        display: table;
+        clear: both;
+    }
+
+    
+    .wpcf7-submit {
+        display: inline-block;
+        padding: 1.2rem 6rem 1.2rem 3rem;
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-align: left;
+        border-radius: 0 !important;
+        color: #fff !important;
+        border: none!important;
+        border-radius: 3rem !important;
+        font-weight: normal;
+        transition: $transition;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-family: $font-secondary;
+
+        display: none !important;
+    }
+
+    .wpcf7-spinner {
+        position: absolute;
+        bottom: 1rem;
+        right: 20rem;
+        display: block;
+    }
+
+}
+
+.contact-form-checkbox span {
+    color: #000;
+}
+
+.wpcf7-select {
+    cursor: pointer;
+    appearance: none;
+    position: relative;
+}
+
+
+.select-div {
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 1.6rem;
+        height: 2rem;
+        background-image: url(../img/arrow-pink.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 2.8rem;
+        right: $smaller-size;
+        position: absolute;
+        pointer-events: none;
+ }
+}
+
+option {
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.contact-form-confirm {
+    margin: -2rem 0 3rem -1.5rem;
+    display: block;
+
+    span {
+        font-size: 1.5rem;
+        line-height: 2;
+    }
+}
+
+// Form 7 errors
+.screen-reader-response {
+    display: none;
+}
+
+.wpcf7-not-valid-tip {
+    display: inline-block;
+    font-size: 1.1rem;
+    margin-top: 0;
+    padding-left: 0;
+}
+
+.wpcf7-response-output {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 0rem;
+    display: none !important;
+}
+
+.grecaptcha-badge { 
+    visibility: hidden;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output, .wpcf7 form.aborted .wpcf7-response-output {
+    border: none !important;
+    color: #fff;
+    text-align: left;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.acceptance-form {
+    margin-top: 2rem;
+
+    span, a {
+        color: #fff;
+        font-size: 1.4rem;
+        line-height: 1.4;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    input {
+        margin-right: 0.5rem;
+        transform: translateY(3px);
+    }
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+    border: none !important;
+}

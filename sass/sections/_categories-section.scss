@@ -1,0 +1,127 @@
+@use "../base/variables" as *;
+
+.categories-section {
+    padding: 12rem 0;
+
+    @media (max-width: $bp-medium) {
+        padding: 5rem 0;
+    }
+
+    .categories-section-title {
+        margin-bottom: 0;
+    }
+
+    // nav
+    .category-navigation {
+        display: flex;
+        justify-content: flex-end;
+
+        @media (max-width: $bp-medium) {
+            justify-content: unset;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        a {
+            padding: 1rem 1.25rem;
+            font-size: 2rem;
+            border-radius: 3rem;
+            transition: $transition;
+
+            @media (max-width: $bp-medium) {
+                font-size: 1.6rem;
+                padding: 1rem 1.5rem 1rem 0;
+            }
+
+            &:hover {
+                background-color: $color-primary;
+
+                @media (max-width: $bp-medium) {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+   
+    
+
+    // category items
+    .category-item {
+        padding-top: 10rem;
+
+        @media (max-width: $bp-medium) {
+            padding-top: 4rem;
+        }
+
+        &:nth-child(odd) {
+
+            .category-content {
+                order: -1;
+
+                @media (max-width: $bp-medium) {
+                    order: 0;
+                }
+            }
+
+            .category-content {
+                padding-right: 5rem;
+
+                @media (max-width: $bp-medium) {
+                    padding-right: 0;
+                }
+            }
+        }
+
+        &:nth-child(even) {
+            .category-content {
+                padding-left: 5rem;
+
+                @media (max-width: $bp-medium) {
+                    padding-left: 0;
+                }
+            }
+        }
+        .category-content {
+
+            .category-title {
+                padding-top: 3rem;
+                border-top: 2px solid $color-dark;
+
+                @media (max-width: $bp-medium) {
+                    border-top: 0;
+                }
+            }
+
+            p {
+                font-size: $smaller-size;
+                line-height: 1.2;
+            }
+        }
+
+        .category-image {
+            figure {
+                overflow: hidden;
+
+                img {
+                    display: block;
+                    transition: all 1.4s ease-in-out;
+                }
+            }
+ 
+        }
+
+        // hover main item
+        &:hover {
+            .category-image img {
+                transform: scale(1.2)
+            }
+        }
+    }
+
+
+
+
+
+
+}

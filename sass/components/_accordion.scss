@@ -1,0 +1,119 @@
+@use "../base/variables" as *;
+
+.accordion {
+    list-style: none;
+    margin: 2rem 0;
+    padding-bottom: 6rem;
+
+    @media (max-width: $bp-medium) {
+        padding-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 2rem;
+        padding-bottom: 0;
+        font-size: 2rem;
+    }
+
+    ul, ol {
+
+        padding-left: 2rem;
+        margin-bottom: 2rem;
+
+        li {
+            font-size: $smaller-size;
+            color: $color-dark;
+            line-height: 1.3;
+        }
+    }
+
+    .accordion-row {
+        border-bottom: 1px solid $color-dark;
+    
+        &:first-of-type {
+            border-top: 1px solid $color-dark;
+        }
+    
+        // Accordion Question
+        .accordion-q {
+            text-transform: unset;
+            cursor: pointer;
+            padding: 3rem 0;
+            margin-bottom: 1rem;
+            position: relative;
+            color: $color-dark;
+            font-size: 2.4rem;
+            margin-bottom: 0 !important;
+            padding-right: 4rem;
+        
+            @media (max-width: $bp-medium) {
+                padding: 2.5rem 3rem 2.5rem 3rem;
+                font-size: 1.6rem;
+                margin-left: -2rem;
+                margin-right: -2rem;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                width: 2.5rem;
+                height: 2rem;
+                background-image: url(../images/plus.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                opacity: 1;
+                transition: all .6s;
+         
+            
+                @media (max-width: $bp-medium) {
+                    width: $smaller-size;
+                    height: 2rem;
+                    right: 2rem;
+                }
+            }
+
+            span {
+                background-color: $color-primary;
+                display: inline-block;
+                padding: .5rem 1rem;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                margin-left: 2rem;
+            }
+    
+            h4 {
+                font-size: 2.4rem;
+                line-height: 1.4;
+                margin-bottom: 0;
+    
+                @media (max-width: $bp-medium) {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        // Accordion Answer
+        .accordion-a {
+            display: none;
+            padding: 0 0 3rem;
+        
+            @media (max-width: $bp-medium) {
+                font-size: 1.5rem;
+                padding: 0 0 2rem;
+            }
+        }
+
+        &.accordion-active {
+            .accordion-q::before {
+                transform: translateY(-50%) rotate(180deg);
+                background-image: url(../images/minus.svg);
+            }
+        }
+    
+    }
+
+}
+
