@@ -25,26 +25,26 @@
             a {
                 font-size: 1.8rem;
                 padding: 3rem 3rem 2rem;
-                border-radius: 1rem;
-                
+                display: flex;
+                align-items: center;
+
                 .service-icon {
-                    height: 6rem;
+                    height: 4rem;
                     width: auto;
+                    margin-right: 2rem;
                     object-fit: contain;
                     text-align: center;
-                    display: blocK;
-                    margin: 0 auto 2rem auto;
                     transition: $transition;
                 }
 
                 &:hover {
                     .service-icon {
-                        transform: translateY(-1rem);
+                        transform: translateY(-.5rem);
                     }
                 }
 
                 &.active {
-                    background-color: #fff;
+                    border-bottom: 2px solid $color-dark;
                 }
             }
         }

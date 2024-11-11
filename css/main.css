@@ -410,7 +410,6 @@ a:hover {
   background-color: #222;
   color: #fff;
   padding: 10rem 4rem;
-  margin-top: 10rem;
 }
 @media (max-width: 50em) {
   .footer {
@@ -851,11 +850,11 @@ textarea {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  color: #222;
+  color: #fff;
   background-color: transparent;
   border-radius: 0;
   border: none;
-  border-bottom: 2px solid #222;
+  border-bottom: 1px solid #fff;
   border-radius: 0;
 }
 @media (max-width: 50em) {
@@ -970,10 +969,11 @@ input[type=checkbox] {
 }
 .wpcf7-form .wpcf7-submit {
   display: inline-block;
-  padding: 1.2rem 6rem 1.2rem 3rem;
+  padding: 2rem 4rem 1.5rem 4rem;
   font-size: 1.6rem;
   font-weight: 500;
   letter-spacing: 1px;
+  background-color: #2bd9e9;
   text-align: left;
   border-radius: 0 !important;
   color: #fff !important;
@@ -984,7 +984,6 @@ input[type=checkbox] {
   cursor: pointer;
   text-transform: uppercase;
   font-family: "Nurom Bold", sans-serif;
-  display: none !important;
 }
 .wpcf7-form .wpcf7-spinner {
   position: absolute;
@@ -1266,6 +1265,13 @@ option {
     margin-bottom: 4rem;
   }
 }
+.section .section-content {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+.section .section-content .section-desc {
+  margin-bottom: 4rem;
+}
 .section .section-content .section-desc p {
   display: inline;
 }
@@ -1306,7 +1312,13 @@ option {
   transform: translateY(0);
 }
 .section.section-contact {
-  padding-top: 10rem;
+  padding-top: 14rem;
+  padding-bottom: 10rem;
+  background-color: #222;
+  margin-top: 10rem;
+}
+.section.section-contact h2, .section.section-contact p {
+  color: #fff;
 }
 @media (max-width: 50em) {
   .section.section-contact {
@@ -1326,7 +1338,7 @@ option {
 }
 
 .categories-section {
-  padding: 12rem 0;
+  padding: 12rem 0 0;
 }
 @media (max-width: 50em) {
   .categories-section {
@@ -1545,22 +1557,22 @@ option {
 .services .services-nav li a {
   font-size: 1.8rem;
   padding: 3rem 3rem 2rem;
-  border-radius: 1rem;
+  display: flex;
+  align-items: center;
 }
 .services .services-nav li a .service-icon {
-  height: 6rem;
+  height: 4rem;
   width: auto;
+  margin-right: 2rem;
   object-fit: contain;
   text-align: center;
-  display: blocK;
-  margin: 0 auto 2rem auto;
   transition: all 0.3s ease-out;
 }
 .services .services-nav li a:hover .service-icon {
-  transform: translateY(-1rem);
+  transform: translateY(-0.5rem);
 }
 .services .services-nav li a.active {
-  background-color: #fff;
+  border-bottom: 2px solid #222;
 }
 .services .services-list {
   max-width: 110rem;
@@ -1582,9 +1594,8 @@ option {
   margin-top: 10rem;
 }
 .post-list .post-item {
-  padding-bottom: 8rem;
-  padding-top: 8rem;
-  border-top: 1px solid #222;
+  padding-bottom: 6rem;
+  padding-top: 6rem;
 }
 .post-list .post-item .post-content .post-desc {
   position: relative;

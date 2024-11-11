@@ -6,13 +6,13 @@ jQuery(document).ready(function($){
     // sliders
     scrollingBanner();
 
-    customFormButton();
+
     backToTop();
     smoothScroll();
     mobileMenu();
 
-    splitTextIntoSpans();
-    animateOnScroll();
+   // splitTextIntoSpans();
+  //  animateOnScroll();
 
    
 });
@@ -20,7 +20,7 @@ jQuery(document).ready(function($){
 
 jQuery(window).scroll(function($){
     navOnScroll();
-    animateOnScroll();
+    //animateOnScroll();
 });
 
 
@@ -95,21 +95,6 @@ function accordion() {
       parentRow.toggleClass('accordion-active');
   
   
-    });
-}
-
-function customFormButton() {
-    jQuery('.wpcf7-submit').after(`
-        <button class="btn-flip-green">
-            <span class="front">Send message</span>
-            <span class="back">Send message</span>
-        </button>
-    `);
-  
-    // When the custom button is clicked, trigger the hidden submit button
-    jQuery('.btn-flip-green').on('click', function(e) {
-        e.preventDefault();
-        jQuery(this).closest('.wpcf7-form').find('.wpcf7-submit').click();
     });
 }
   

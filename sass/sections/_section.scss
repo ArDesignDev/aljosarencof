@@ -27,7 +27,12 @@
     }
 
     .section-content {
+        max-width: 80rem;
+        margin: 0 auto;
+
         .section-desc {
+            margin-bottom: 4rem;
+            
             p {
                 display: inline;
             }
@@ -75,7 +80,14 @@
 
     // contact
     &.section-contact {
-        padding-top: 10rem;
+        padding-top: 14rem;
+        padding-bottom: 10rem;
+        background-color: $color-dark;
+        margin-top: 10rem;
+
+        h2, p {
+            color: #fff;
+        }
 
         @media (max-width: $bp-medium) {
             padding-top: 5rem;

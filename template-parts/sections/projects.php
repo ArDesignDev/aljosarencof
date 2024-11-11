@@ -6,56 +6,33 @@
             <h2 class="categories-section-title"><?php echo the_field('work_title'); ?></h2>
         </div>
 
-        <div class="post-list">
-        <?php
-        $posts = get_posts(array(
-            'numberposts' => 10,
-            'post_type' => 'post',
-            'post_status' => 'publish'
-        ));
 
-        foreach ($posts as $post) :
-            // Setup post data
-            setup_postdata($post);
+        <!-- Project List -->
+        <div id="posts-container" class="post-list">
+                <?php
 
-            // Get post details
-            $post_slug = esc_attr(str_replace(' ', '-', strtolower($post->post_name)));
-            $post_image_url = get_the_post_thumbnail_url($post->ID, 'large'); // Featured image
-        ?>
-            <div class="post-item" id="<?php echo $post_slug; ?>">
-                <div class="row">
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 2 // Adjust the number as needed
+                );
 
-                    <!-- Post Image -->
-                    <?php if ($post_image_url): ?>
-                        <div class="col-sm-6 post-image">
-                            <figure>
-                                <img src="<?php echo esc_url($post_image_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy">
-                            </figure>
-                        </div>
-                    <?php endif; ?>
+                $query = new WP_Query($args);
 
-                    <!-- Post Content -->
-                    <div class="col-sm-6 post-content">
-                       
-                        <div class="post-desc">
-                            <h3 class="post-title"><?php echo esc_html(get_the_title()); ?></h3>
-                            <p><strong>My role: </strong><?php echo esc_html(get_field('my_role')); ?></p>
-                            <div class="post-desc-text"><p><strong>Project description: </strong></p> <?php echo wp_kses_post(get_field('project_description')); ?></div>
-                            <div class="post-desc-skills">
-                                <?php echo wp_kses_post(get_field('skills_and_deliverables')); ?></p>
-                            </div>
-                            <div class="btn btn-dark post-link">
-                                <a href="<?php echo esc_html(get_field('web_link')); ?>" target="_blank">Visit website</a>
-                             </div>
-                        </div>
-                    </div>
+                if ($query->have_posts()) : 
+                    while ($query->have_posts()) : $query->the_post();
+                        get_template_part('template-parts/sections/projects-item');
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo '';
+                endif;
 
-                </div>
-            </div>
-        <?php endforeach; ?>
-        <?php wp_reset_postdata(); ?>
+                ?>
         </div>
 
-
+        <!-- Load more button -->
+        <?php if ($query->max_num_pages > 1): ?>
+        <button class="btn-load-more" id="load-more" data-page="1">Load More</button> 
+        <?php endif; ?>
     </div>
 </section>

@@ -168,7 +168,7 @@ require get_template_directory() . '/inc/gallery-image.php';
 /**
  * Ajax Load more
  */
-require get_template_directory() . '/inc/load-more-posts.php';
+require get_template_directory() . '/inc/load-more-post-home.php';
 
 /**
  * Admin styling
