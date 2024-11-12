@@ -2,7 +2,7 @@
 // Load more posts with ajax (also load-more.js has to be added)
 
 function load_more_scripts() {
-    wp_enqueue_script('load-more', get_template_directory_uri() . '/js/load-more.js', array('jquery'), null, true);
+    wp_enqueue_script('load-more', get_template_directory_uri() . '/js/admin/load-more.js', array('jquery'), null, true);
     wp_localize_script('load-more', 'ajax_url', admin_url('admin-ajax.php'));
 }
 add_action('wp_enqueue_scripts', 'load_more_scripts');

@@ -26,6 +26,14 @@
                     <?php if ($description = $about_content['about_description']): ?>
                         <div class="section-desc">   
                             <?php echo wp_kses_post($description); ?>
+                            <div class="about-desc-more">
+                                <?php echo wp_kses_post($about_content['about_description_long']); ?>                       
+                            </div>
+                            <button class="about-desc-toggle">
+                                <span class="about-desc-toggle-more">Read More</span>
+                                <span class="about-desc-toggle-less">Read less</span>
+                            </button>
+      
                         </div>
                     <?php endif;
                 endif; ?>

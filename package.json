@@ -7,7 +7,7 @@
   "scripts": {
     "watch:sass": "concurrently \"sass --watch sass/main.scss:css/main.css --source-map --style=expanded\" \"sass --watch sass/main.scss:css/main.min.css --style=compressed && postcss css/main.min.css --use autoprefixer -o css/main.min.css\"",
     "build:sass": "sass sass/main.scss css/main.css --source-map --style=expanded && sass sass/main.scss css/main.min.css --no-source-map --style=compressed && postcss css/main.min.css --use autoprefixer -o css/main.min.css",
-    "minify:js": "terser js/*.js --compress --mangle --output js/script.min.js --source-map",
+    "minify:js": "terser js/script.js --compress --mangle --output js/script.min.js --source-map",
     "build": "npm run build:sass && npm run minify:js"
   },
   "devDependencies": {

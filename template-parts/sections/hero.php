@@ -5,7 +5,7 @@
     </span>
     <div class="hero-content">
         <h3 class="hero-subtitle"><strong><?php echo esc_html(get_field('hero_subtitle')); ?></strong></h3>
-        <h1 class="hero-title"><?php echo esc_html(get_field('hero_main_title')); ?></h1>
+        <h1 class="hero-title split-words"><?php echo esc_html(get_field('hero_main_title')); ?></h1>
 
         <?php
         $button_link = get_field('hero_button');

@@ -1,14 +1,13 @@
 @use "../base/variables" as *;
 
 .footer {
-    background-color: $color-dark;
+    background-color: $color-darker;
     color: #fff;
-    padding: 10rem 4rem;
+    padding: 3rem 4rem 3rem;
 
     @media (max-width: $bp-medium) {
         text-align: center;
         padding: 8rem 4rem 4rem;
-        margin-top: 4rem;
     }
 
     .footer-copy {
@@ -44,16 +43,33 @@
     .footer-social {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
 
         @media (max-width: $bp-medium) {
             flex-wrap: wrap;
+            justify-content: center;
         }
-
+        
         a {
-            @media (max-width: $bp-medium) {
-                font-size: 2rem;
+
+            transition: $transition;
+
+            svg {
+                path {
+                    fill: #fff;
+                    transition: $transition;
+                }
             }
+
+            &:hover {
+
+                transform: translateY(-.5rem);
+
+                svg path {
+                    fill: $color-primary;
+                }
+            }
+
         }
     }
 

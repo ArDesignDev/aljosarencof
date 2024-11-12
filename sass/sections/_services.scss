@@ -4,6 +4,10 @@
     padding: 12rem 0 12rem;
     background-color: $color-gray-light;
 
+    @media (max-width: $bp-medium) {
+        padding: 8rem 0 2rem;
+    }
+
     .services-header {
         text-align: center;
         max-width: 110rem;
@@ -17,16 +21,36 @@
         margin: 8rem 0 6rem;
         flex-wrap: wrap;
 
+        @media (max-width: $bp-medium) {
+            margin: 5rem 0 4rem;
+        }
+
         li {
             padding: 0 2rem;
             text-align: center;
 
+            @media (max-width: $bp-medium) {
+                width: 50%;
+            }
+
+            &:nth-of-type(3) {
+                @media (max-width: $bp-medium) {
+                    width: 60%;
+                }
+    
+            }
 
             a {
                 font-size: 1.8rem;
                 padding: 3rem 3rem 2rem;
                 display: flex;
                 align-items: center;
+                border-bottom: 2px solid transparent;
+
+                @media (max-width: $bp-medium) {
+                    padding: 2rem 0;
+                    font-size: 1.4rem;
+                }
 
                 .service-icon {
                     height: 4rem;
@@ -40,6 +64,10 @@
                 &:hover {
                     .service-icon {
                         transform: translateY(-.5rem);
+
+                        @media (max-width: $bp-medium) {
+                            transform: translateY(0);
+                        }
                     }
                 }
 
@@ -64,6 +92,10 @@
             p {
                 strong {
                     font-size: 2.4rem;
+
+                    @media (max-width: $bp-medium) {
+                        font-size: 1.8rem;
+                    }
                 }
             }
 

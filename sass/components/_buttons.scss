@@ -26,6 +26,7 @@
         a {
             color: $color-dark;
             border: 2px solid $color-dark;
+            font-weight: bold;
 
             &:hover {
                 border-color: $color-primary;

@@ -21,7 +21,7 @@
         border: none;
         padding-top: 0;
         padding-bottom: 0;
-        border-bottom: 1px solid $color-dark;
+        border-bottom: 1px solid #ffffff36;
     }
 
     .header-inner {
@@ -63,11 +63,16 @@
                 }
 
                 @media (max-width: $bp-medium) {
-                    font-size: 2rem;
+                    font-size: 3rem;
+                    padding-top: 0.75rem;                
                 }
 
                 a {
                     color: #fff;
+
+                    span {
+                        color: $color-primary;
+                    }
                 }
             }
     
@@ -86,6 +91,7 @@
                 top: 0;
                 left: 0;
                 z-index: 99;
+                padding-right: 0;
             }
 
             &-active {
@@ -179,7 +185,7 @@
                 display: block;
             }
 
-            $icon-color: $color-dark;
+            $icon-color: #fff;
 
             &::before {
                 content: "";

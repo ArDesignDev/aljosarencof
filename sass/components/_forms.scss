@@ -134,21 +134,16 @@ input[type=checkbox] {
     .wpcf7-submit {
         display: inline-block;
         padding: 2rem 4rem 1.5rem 4rem;
-        font-size: 1.6rem;
-        font-weight: 500;
+        font-size: $base-size;
         letter-spacing: 1px;
         background-color: $color-primary;
         text-align: left;
-        border-radius: 0 !important;
-        color: #fff !important;
+        color: $color-dark !important;
         border: none!important;
         border-radius: 3rem !important;
-        font-weight: normal;
+        font-weight: bold;
         transition: $transition;
         cursor: pointer;
-        text-transform: uppercase;
-        font-family: $font-secondary;
-
     }
 
     .wpcf7-spinner {
@@ -217,9 +212,10 @@ option {
 
 .wpcf7-response-output {
     font-size: 1.4rem;
-    text-align: center;
+    text-align: left;
     margin-top: 0rem;
-    display: none !important;
+    color: #fff;
+    padding-left: 0 !important;
 }
 
 .grecaptcha-badge { 

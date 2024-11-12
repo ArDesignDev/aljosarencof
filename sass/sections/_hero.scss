@@ -32,6 +32,7 @@
         text-align: center;
         position: relative;
         z-index: 1;
+        padding: 2rem 4rem;
 
         .hero-subtitle, .hero-title {
             text-align: center;
@@ -41,11 +42,53 @@
             max-width: 120rem;
             margin: 2rem auto;
             color: #fff;
+            transition: $transition;
+
+            @media (max-width: $bp-medium) {
+                font-size: 5rem;
+            }
+
+            span {
+                opacity: 0;
+                transition: all .6s;
+                display: inline-block; /* Makes inline element transformable */
+                transform: translateY(4rem) rotate(2deg);
+
+                &.active {
+                    opacity: 1;
+                    transform: translate(0, 0);
+                }
+
+                &:nth-of-type(2) {
+                    margin-left: -1vw;
+                    margin-right: -1vw;
+                }
+            }
         }
 
         .hero-subtitle {
             font-size: $smaller-size;
             color: #fff;
+            transition: all .6s;
+            opacity: 0;
+            transform: translateY(4rem) rotate(2deg);
+
+            &.active {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+        }
+
+        .btn-flip {
+            opacity: 0;
+            transform: translateY(4rem) rotate(2deg);
+            transition: all .6s;
+
+            &.active {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+
         }
     }
 

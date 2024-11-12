@@ -13,7 +13,7 @@
 
                 $args = array(
                     'post_type' => 'post',
-                    'posts_per_page' => 2 // Adjust the number as needed
+                    'posts_per_page' => 4 // Adjust the number as needed
                 );
 
                 $query = new WP_Query($args);

@@ -1,7 +1,7 @@
 @use "../base/variables" as *;
 
 .categories-section {
-    padding: 12rem 0 0;
+    padding: 12rem 0 5rem;
 
     @media (max-width: $bp-medium) {
         padding: 5rem 0;

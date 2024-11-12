@@ -1,12 +1,24 @@
+@use "../base/variables" as *;
+
 .about {
     padding: 10rem 0;
+    background-color: $color-gray-light;
+
+    @media (max-width: $bp-medium) {
+        padding: 0 0 7rem 0;
+    }
 
     .about-images {
         .about-images-inner {
             position: relative;
+
             figure {
                 overflow: hidden;
                 border-radius: .5rem;
+
+                @media (max-width: $bp-medium) {
+                    margin: 0 -3rem;
+                }
             }
     
             img {
@@ -18,6 +30,37 @@
     
     .about-content {
         padding-left: 8rem;
+
+        @media (max-width: $bp-medium) {
+            padding-left: 0;
+            padding-top: 3rem;
+        }
+
+        .about-desc-toggle {
+            background-color: transparent;
+            border: none;
+            color: $color-primary;
+            font-size: $base-size;
+            border-bottom: 1px solid $color-primary;
+            cursor: pointer;
+
+            .about-desc-toggle-less {
+                display: none;
+            }
+
+            &.active {
+                .about-desc-toggle-more {
+                    display: none;
+                }
+                .about-desc-toggle-less {
+                    display: inline;
+                }
+            }
+        }
+
+        .about-desc-more {
+            display: none;
+        }
     }
 
 }

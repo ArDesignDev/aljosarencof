@@ -1,20 +1,24 @@
 jQuery(document).ready(function($){
+
+    splitTextIntoWord();
+
+    loader();
+    setTimeout(animationOnLoad, 600);
+
     navOnScroll();
-    toggleContent();
-
-    accordion();
-    // sliders
-    scrollingBanner();
-
-
-    backToTop();
     smoothScroll();
     mobileMenu();
+    toggleContent();
+    readMore();
+    
+    // accordion();
+    // sliders
+    // scrollingBanner();
+    // backToTop();
+    // splitTextIntoSpans(); 
+    // animateOnScroll();
 
-   // splitTextIntoSpans();
-  //  animateOnScroll();
 
-   
 });
 
 
@@ -23,6 +27,37 @@ jQuery(window).scroll(function($){
     //animateOnScroll();
 });
 
+function animationOnLoad() {
+
+    $('.hero-subtitle').addClass('active');
+
+    setTimeout(function() {
+
+        jQuery('.hero-title span').each(function(i){
+          setTimeout(function(){
+            jQuery('.hero-title span').eq(i).addClass('active');
+          }, 180 * (i+1));
+        });
+    
+    }, 200);
+
+    setTimeout(function() {
+        $('.hero-content .btn-flip').addClass('active');
+    }, 1800);
+    
+}
+
+function readMore() {
+    $('.about-desc-toggle').on('click', function() {
+        $('.about-desc-more').slideToggle();
+        $('.about-desc-toggle').toggleClass('active');
+    });
+}
+
+function loader() {
+    jQuery('.loader').fadeOut('fast');
+    jQuery('.loader-screen').delay(500).fadeOut('slow');
+}
 
 // Nav on scroll
 function navOnScroll() {
@@ -164,6 +199,25 @@ function splitTextIntoSpans() {
         });
     });
 }
+
+function splitTextIntoWord() {
+    $('.split-words').each(function() {
+        var $this = $(this); // Store the current element
+        var text = $this.text(); // Get the text of the current element
+        var words = text.split(' '); // Split text into words
+        $this.empty(); // Clear original text
+
+        // Wrap each word in a span and append it back to the current element
+        $.each(words, function(index, word) {
+            $('<span>' + word + '</span>').appendTo($this); // Append each word wrapped in a span
+            
+            if (index < words.length - 1) {
+                $this.append(' '); // Append a space between words
+            }
+        });
+    });
+}
+
 
 
 function animateOnScroll() {

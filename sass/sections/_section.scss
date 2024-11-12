@@ -80,17 +80,16 @@
 
     // contact
     &.section-contact {
-        padding-top: 14rem;
-        padding-bottom: 10rem;
+        padding: 14rem 0 20rem;
         background-color: $color-dark;
-        margin-top: 10rem;
+        background: linear-gradient(333deg, rgba(34,34,34,1) 50%, rgb(39, 39, 39) 100%);
+
+        @media (max-width: $bp-medium) {
+            padding: 8rem 0 6rem;
+        }
 
         h2, p {
             color: #fff;
-        }
-
-        @media (max-width: $bp-medium) {
-            padding-top: 5rem;
         }
         
         .section-content {

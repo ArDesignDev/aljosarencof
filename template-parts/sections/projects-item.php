@@ -11,7 +11,7 @@
         <div class="col-sm-6 post-content">
             <div class="post-desc">
                 <h3 class="post-title"><?php echo esc_html(get_the_title()); ?></h3>
-               <!-- <p><strong>My role: </strong><?php echo esc_html(get_field('my_role')); ?></p>-->
+                <p class="post-desc-work"><?php echo esc_html(get_field('my_role')); ?></p>
                 <div class="post-desc-text">
                     <?php echo wp_kses_post(get_field('project_description')); ?>
                 </div>
