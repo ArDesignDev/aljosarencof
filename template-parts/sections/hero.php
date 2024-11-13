@@ -15,10 +15,13 @@
             $button_text = esc_html($button_link['title']);
             $button_target = $button_link['target'] ? esc_attr($button_link['target']) : '_self';
         ?>
+        <div class="hero-btn">
             <a href="<?php echo $button_url; ?>" target="<?php echo $button_target; ?>" class="btn-flip">
                 <span class="front"><?php echo $button_text; ?></span>
                 <span class="back"><?php echo $button_text; ?></span>
             </a>
+        </div>
+
         <?php endif; ?>
     </div>
 </section>

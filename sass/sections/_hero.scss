@@ -39,13 +39,14 @@
         }
 
         .hero-title {
-            max-width: 120rem;
+            max-width: 68vw;
             margin: 2rem auto;
             color: #fff;
             transition: $transition;
 
             @media (max-width: $bp-medium) {
                 font-size: 5rem;
+                max-width: none;
             }
 
             span {
@@ -79,7 +80,7 @@
             }
         }
 
-        .btn-flip {
+        .hero-btn {
             opacity: 0;
             transform: translateY(4rem) rotate(2deg);
             transition: all .6s;

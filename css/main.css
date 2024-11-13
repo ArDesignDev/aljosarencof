@@ -1324,7 +1324,7 @@ option {
   text-align: center;
 }
 .hero .hero-content .hero-title {
-  max-width: 120rem;
+  max-width: 68vw;
   margin: 2rem auto;
   color: #fff;
   transition: all 0.3s ease-out;
@@ -1332,6 +1332,7 @@ option {
 @media (max-width: 50em) {
   .hero .hero-content .hero-title {
     font-size: 5rem;
+    max-width: none;
   }
 }
 .hero .hero-content .hero-title span {
@@ -1359,12 +1360,12 @@ option {
   opacity: 1;
   transform: translate(0, 0);
 }
-.hero .hero-content .btn-flip {
+.hero .hero-content .hero-btn {
   opacity: 0;
   transform: translateY(4rem) rotate(2deg);
   transition: all 0.6s;
 }
-.hero .hero-content .btn-flip.active {
+.hero .hero-content .hero-btn.active {
   opacity: 1;
   transform: translate(0, 0);
 }

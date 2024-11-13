@@ -63,7 +63,7 @@ function animationOnLoad() {
     }, 200);
 
     setTimeout(function() {
-        $('.hero-content .btn-flip').addClass('active');
+        $('.hero-content .hero-btn').addClass('active');
     }, 1800);
     
 }
