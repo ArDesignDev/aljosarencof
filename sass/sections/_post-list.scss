@@ -100,19 +100,28 @@
                 }
             }
         }
-    }
 
-    .post-image {
-        figure {
-            overflow: hidden;
-            border-radius: .5rem;
+        .post-image {
+            figure {
+                overflow: hidden;
+                border-radius: .5rem;
 
-            img {
-                display: block;
-                animation: scaleAnimationSmall 15s ease-in-out infinite;
-                transform-origin: center;
-                width: 100%;
+                img {
+                    display: block;
+                    transform-origin: center;
+                    width: 100%;
+                }
             }
+    
+        }
+
+        &.active {
+            .post-image {
+                img {
+                    animation: unScaleAnimation 5s ease-in-out 1;
+                }
+            }
+  
         }
     }
 }
