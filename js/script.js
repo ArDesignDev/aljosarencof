@@ -10,12 +10,14 @@ jQuery(document).ready(function($){
     mobileMenu();
     toggleContent();
     readMore();
+
+    checkFadeIn();
     
     // accordion();
     // sliders
     // scrollingBanner();
     // backToTop();
-    // splitTextIntoSpans(); 
+    //splitTextIntoSpans(); 
     // animateOnScroll();
 
 
@@ -24,8 +26,27 @@ jQuery(document).ready(function($){
 
 jQuery(window).scroll(function($){
     navOnScroll();
+    checkFadeIn();
     //animateOnScroll();
 });
+
+function isInViewport(element) {
+    const elementTop = $(element).offset().top;
+    const elementBottom = elementTop + $(element).outerHeight();
+    const viewportTop = $(window).scrollTop();
+    const viewportBottom = viewportTop + $(window).height();
+    
+    // Check if element is within a buffer (adjust buffer as needed)
+    return elementBottom > viewportTop + 100 && elementTop < viewportBottom - 100;
+  }
+
+function checkFadeIn() {
+    $('.fade-in').each(function () {
+        if (isInViewport(this)) {
+            $(this).addClass('active');
+        }
+    });
+}
 
 function animationOnLoad() {
 
@@ -209,7 +230,7 @@ function splitTextIntoWord() {
 
         // Wrap each word in a span and append it back to the current element
         $.each(words, function(index, word) {
-            $('<span>' + word + '</span>').appendTo($this); // Append each word wrapped in a span
+            $('<span class="word">' + word + '</span>').appendTo($this); // Append each word wrapped in a span
             
             if (index < words.length - 1) {
                 $this.append(' '); // Append a space between words

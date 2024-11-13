@@ -1,4 +1,4 @@
-<div class="post-item">
+<div class="post-item fade-in">
     <div class="row">
         <?php $post_image_url = get_the_post_thumbnail_url($post->ID, 'large'); ?>
         <?php if ($post_image_url): ?>
@@ -15,12 +15,11 @@
                 <div class="post-desc-text">
                     <?php echo wp_kses_post(get_field('project_description')); ?>
                 </div>
+                <!--
                 <div class="post-desc-skills">
                     <?php echo wp_kses_post(get_field('skills_and_deliverables')); ?>
-                </div>
-                <div class="btn btn-dark post-link">
-                    <a href="<?php echo esc_html(get_field('web_link')); ?>" target="_blank">Visit website</a>
-                </div>
+                </div>-->
+                <a href="<?php echo esc_html(get_field('web_link')); ?>" target="_blank" class="btn-link">Visit website</a>
             </div>
         </div>
     </div>

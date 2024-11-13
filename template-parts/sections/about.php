@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <!-- Image Column -->
-            <div class="col-sm-5 about-images">
+            <div class="col-sm-5 about-images fade-in">
                 <div class="about-images-inner">
                     <?php if ($image = get_field('about_image')): ?>
                         <figure class="about-image-1">
@@ -13,7 +13,7 @@
             </div>
 
             <!-- Text Column -->
-            <div class="col-sm-7 about-content">
+            <div class="col-sm-7 about-content fade-in">
                 <?php
                 // Access fields within the about_content group
                 $about_content = get_field('about_content');

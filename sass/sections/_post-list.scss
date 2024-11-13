@@ -104,8 +104,14 @@
 
     .post-image {
         figure {
+            overflow: hidden;
+            border-radius: .5rem;
+
             img {
-                border-radius: .5rem;
+                display: block;
+                animation: scaleAnimationSmall 15s ease-in-out infinite;
+                transform-origin: center;
+                width: 100%;
             }
         }
     }

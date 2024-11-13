@@ -2,7 +2,7 @@
     <div class="container">
         
         <!-- Category Navigation Header -->
-        <div class="categories-section-header">
+        <div class="categories-section-header fade-in">
             <h2 class="categories-section-title"><?php echo the_field('work_title'); ?></h2>
         </div>
 
