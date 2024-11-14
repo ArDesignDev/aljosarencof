@@ -229,11 +229,26 @@ a:hover {
 .fade-in {
   opacity: 0;
   transition: all 0.6s;
-  transform: translateY(1rem);
+  transform: translateY(3rem);
 }
 .fade-in.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+.words {
+  white-space: nowrap;
+}
+
+.letters {
+  opacity: 0;
+  transition: all 0.4s;
+  display: inline-block;
+  transform: translateY(3rem) rotate(10deg);
+}
+.letters.active {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 
 .header {
@@ -307,9 +322,6 @@ a:hover {
 }
 .header .header-inner .header-logo .site-title a {
   color: #fff;
-}
-.header .header-inner .header-logo .site-title a span {
-  color: #2bd9e9;
 }
 .header .header-inner .header-nav {
   width: 60%;
@@ -1335,19 +1347,20 @@ option {
     max-width: none;
   }
 }
-.hero .hero-content .hero-title span {
+.hero .hero-content .hero-title .letters {
   opacity: 0;
-  transition: all 0.6s;
+  transition: all 0.4s;
   display: inline-block; /* Makes inline element transformable */
-  transform: translateY(4rem) rotate(2deg);
+  transform: translateY(4rem) rotate(10deg);
 }
-.hero .hero-content .hero-title span.active {
+@media (max-width: 50em) {
+  .hero .hero-content .hero-title .letters {
+    transform: translateY(2rem) rotate(5deg);
+  }
+}
+.hero .hero-content .hero-title .letters.active {
   opacity: 1;
-  transform: translate(0, 0);
-}
-.hero .hero-content .hero-title span:nth-of-type(2) {
-  margin-left: -1vw;
-  margin-right: -1vw;
+  transform: translate(0, 0) rotate(0);
 }
 .hero .hero-content .hero-subtitle {
   font-size: 1.8rem;
@@ -1647,7 +1660,7 @@ option {
 
 .about {
   padding: 10rem 0;
-  background-color: #f4f4f4;
+  background-color: #fff;
 }
 @media (max-width: 50em) {
   .about {
@@ -1907,10 +1920,6 @@ option {
   transform-origin: center;
   width: 100%;
 }
-.post-list .post-item.active .post-image img {
-  animation: unScaleAnimation 5s ease-in-out 1;
-}
-
 .category .category-header {
   position: relative;
   height: 45rem;

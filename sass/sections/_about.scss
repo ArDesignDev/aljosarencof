@@ -2,7 +2,7 @@
 
 .about {
     padding: 10rem 0;
-    background-color: $color-gray-light;
+    background-color: #fff;
 
     @media (max-width: $bp-medium) {
         padding: 0 0 7rem 0;
@@ -70,5 +70,6 @@
             display: none;
         }
     }
+
 
 }

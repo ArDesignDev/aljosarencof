@@ -49,21 +49,21 @@
                 max-width: none;
             }
 
-            span {
+            .letters {
                 opacity: 0;
-                transition: all .6s;
+                transition: all .4s;
                 display: inline-block; /* Makes inline element transformable */
-                transform: translateY(4rem) rotate(2deg);
+                transform: translateY(4rem) rotate(10deg);
+
+                @media (max-width: $bp-medium) {
+                    transform: translateY(2rem) rotate(5deg);
+                }
 
                 &.active {
                     opacity: 1;
-                    transform: translate(0, 0);
+                    transform: translate(0, 0) rotate(0);
                 }
 
-                &:nth-of-type(2) {
-                    margin-left: -1vw;
-                    margin-right: -1vw;
-                }
             }
         }
 

@@ -13,18 +13,18 @@
             </div>
 
             <!-- Text Column -->
-            <div class="col-sm-7 about-content fade-in">
+            <div class="col-sm-7 about-content">
                 <?php
                 // Access fields within the about_content group
                 $about_content = get_field('about_content');
                 
                 if ($about_content):
                     if ($title = $about_content['about_title']): ?>
-                        <h2 class="section-title"><?php echo esc_html($title); ?></h2>
+                        <h2 class="section-title text-split"><?php echo esc_html($title); ?></h2>
                     <?php endif; ?>
 
                     <?php if ($description = $about_content['about_description']): ?>
-                        <div class="section-desc">   
+                        <div class="section-desc fade-in">   
                             <?php echo wp_kses_post($description); ?>
                             <div class="about-desc-more">
                                 <?php echo wp_kses_post($about_content['about_description_long']); ?>                       

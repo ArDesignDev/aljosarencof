@@ -117,9 +117,7 @@
 
         &.active {
             .post-image {
-                img {
-                    animation: unScaleAnimation 5s ease-in-out 1;
-                }
+                img {}
             }
   
         }

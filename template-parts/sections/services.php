@@ -1,7 +1,7 @@
 <section class="services" id="services">
     <div class="container">
         <div class="services-header">
-            <h2 class="fade-in"><?php the_field('service_title'); ?></h2>
+            <h2 class="text-split"><?php the_field('service_title'); ?></h2>
         </div>
 
         <?php

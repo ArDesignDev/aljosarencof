@@ -1,7 +1,5 @@
 jQuery(document).ready(function($){
 
-    splitTextIntoWord();
-
     loader();
     setTimeout(animationOnLoad, 600);
 
@@ -12,13 +10,15 @@ jQuery(document).ready(function($){
     readMore();
 
     checkFadeIn();
+    splitText();
+
+    animateOnScroll();
     
     // accordion();
     // sliders
     // scrollingBanner();
     // backToTop();
     //splitTextIntoSpans(); 
-    // animateOnScroll();
 
 
 });
@@ -27,7 +27,7 @@ jQuery(document).ready(function($){
 jQuery(window).scroll(function($){
     navOnScroll();
     checkFadeIn();
-    //animateOnScroll();
+    animateOnScroll();
 });
 
 function isInViewport(element) {
@@ -54,10 +54,10 @@ function animationOnLoad() {
 
     setTimeout(function() {
 
-        jQuery('.hero-title span').each(function(i){
+        jQuery('.hero-title .letters').each(function(i){
           setTimeout(function(){
-            jQuery('.hero-title span').eq(i).addClass('active');
-          }, 180 * (i+1));
+            jQuery('.hero-title .letters').eq(i).addClass('active');
+          }, 60 * (i+1));
         });
     
     }, 200);
@@ -206,87 +206,52 @@ function mobileMenu() {
     });
 }
 
-// split words
-function splitTextIntoSpans() {
-    $('.split-text').each(function() {
-        var $this = $(this); // Store the current element
-        var text = $this.text(); // Get the text of the current element
-        var letters = text.split(''); // Split text into letters
-        $this.empty(); // Clear original text
-        
-        // Wrap each letter in a span and append it back to the current element only
-        $.each(letters, function(index, letter) {
-            $('<span>' + letter + '</span>').appendTo($this); // Append to the current element
+// split text
+function splitText() {
+    $('.text-split').each(function() {
+        let words = $(this).text().split(' '); // Split text by spaces into words
+        let wrappedWords = words.map(word => {
+            let letters = word.split(''); // Split each word into letters
+            let wrappedLetters = letters.map(letter => `<span class="letters">${letter}</span>`).join(''); // Wrap each letter
+            return `<span class="words">${wrappedLetters}</span>`; // Wrap each word
         });
+        $(this).html(wrappedWords.join(' ')); // Join words back with spaces and replace HTML
     });
 }
 
-function splitTextIntoWord() {
-    $('.split-words').each(function() {
-        var $this = $(this); // Store the current element
-        var text = $this.text(); // Get the text of the current element
-        var words = text.split(' '); // Split text into words
-        $this.empty(); // Clear original text
-
-        // Wrap each word in a span and append it back to the current element
-        $.each(words, function(index, word) {
-            $('<span class="word">' + word + '</span>').appendTo($this); // Append each word wrapped in a span
-            
-            if (index < words.length - 1) {
-                $this.append(' '); // Append a space between words
-            }
-        });
+function animateLetters(selector, interval, activeClass) {
+    jQuery(selector).each(function(i) {
+        setTimeout(function() {
+            jQuery(selector).eq(i).addClass(activeClass);
+        }, interval * (i + 1));
     });
 }
-
-
 
 function animateOnScroll() {
     const wScroll = jQuery(this).scrollTop();
 
-    const about = jQuery('.about-section').offset().top - 400;
-    const service = jQuery('.section-services').offset().top - 600;
-    const contact = jQuery('.section-contact').offset().top - 600;
+    const about = jQuery('.about').length ? jQuery('.about').offset().top - 600 : null;
+    const services = jQuery('.services').length ? jQuery('.services').offset().top - 600 : null;
+    const projects = jQuery('.categories-section').length ? jQuery('.categories-section').offset().top - 600 : null;
+    const contact = jQuery('.section-contact').length ? jQuery('.section-contact').offset().top - 600 : null;
 
-
-    function animateText(className) {
-        jQuery(`.${className}`).each(function(i) {
-            var $this = $(this); // Store the current span in a variable
-            setTimeout(function() {
-                $this.addClass('scrolled'); // Add the class only to the current span
-            }, 140 * (i + 1));
-        });
-    }
-
-
-    // about section   
+   
     if(wScroll>about) {
-        
-        // animate img
-        $('.about-section .section-image img, .about-section .pre-text').addClass('scrolled');
-
-        // animate text
-        animateText('about-section .pre-text span');
-     } 
-
-     // service
-     if(wScroll>service) {
-
-         // animate text
-        $('.section-services .pre-text').addClass('scrolled');
-        animateText('section-services .pre-text span');
-
-        // animate accordion
-        $('.section-services .accordion').addClass('scrolled');
-     }
-
-     // contact
-    if(wScroll>contact) {
-
-        // animate text
-        $('.section-contact .pre-text').addClass('scrolled');
-        animateText('section-contact .pre-text span');
+        animateLetters('.about .letters', 40, 'active')
     }
+
+    if(wScroll>services) {
+        animateLetters('.services .letters', 40, 'active')
+    }
+
+    if(wScroll>projects) {
+        animateLetters('.categories-section .letters', 40, 'active')
+    } 
+
+    if(wScroll>contact) {
+        animateLetters('.section-contact .letters', 40, 'active')
+    } 
+
 }
 
 function toggleContent() {

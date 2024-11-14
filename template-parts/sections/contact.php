@@ -9,7 +9,7 @@
             
             if ($contact_content):
                 if ($title = $contact_content['contact_title']): ?>
-                    <h2 class="section-title fade-in"><?php echo esc_html($title); ?></h2>
+                    <h2 class="section-title text-split"><?php echo esc_html($title); ?></h2>
                 <?php endif; ?>
 
                 <?php if ($description = $contact_content['contact_description']): ?>

@@ -2,10 +2,9 @@
     <div class="container">
         
         <!-- Category Navigation Header -->
-        <div class="categories-section-header fade-in">
-            <h2 class="categories-section-title"><?php echo the_field('work_title'); ?></h2>
+        <div class="categories-section-header">
+            <h2 class="categories-section-title text-split"><?php echo the_field('work_title'); ?></h2>
         </div>
-
 
         <!-- Project List -->
         <div id="posts-container" class="post-list">
