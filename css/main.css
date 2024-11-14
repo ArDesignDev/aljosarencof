@@ -1767,6 +1767,8 @@ option {
   display: flex;
   align-items: center;
   border-bottom: 2px solid transparent;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 @media (max-width: 50em) {
   .services .services-nav li a {
@@ -1774,9 +1776,6 @@ option {
     font-size: 1.4rem;
     flex-direction: column;
   }
-}
-.services .services-nav li a span {
-  padding-left: 0.75rem;
 }
 @media (max-width: 50em) {
   .services .services-nav li a span {
@@ -1786,7 +1785,7 @@ option {
 .services .services-nav li a .service-icon {
   height: 4rem;
   width: auto;
-  margin-right: 2rem;
+  margin-right: 1rem;
   object-fit: contain;
   text-align: center;
   transition: all 0.3s ease-out;
@@ -1835,7 +1834,7 @@ option {
 }
 
 .post-list {
-  margin-top: 10rem;
+  margin-top: 6rem;
 }
 @media (max-width: 50em) {
   .post-list {

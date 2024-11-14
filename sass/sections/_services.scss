@@ -46,6 +46,8 @@
                 display: flex;
                 align-items: center;
                 border-bottom: 2px solid transparent;
+                justify-content: space-between;
+                gap: .75rem;
   
 
                 @media (max-width: $bp-medium) {
@@ -55,8 +57,7 @@
                 }
 
                 span {
-                    padding-left: .75rem;
-                    
+
                     @media (max-width: $bp-medium) {
                         display: none;
                     }
@@ -65,7 +66,7 @@
                 .service-icon {
                     height: 4rem;
                     width: auto;
-                    margin-right: 2rem;
+                    margin-right: 1rem;
                     object-fit: contain;
                     text-align: center;
                     transition: $transition;

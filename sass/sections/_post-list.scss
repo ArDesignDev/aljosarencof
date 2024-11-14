@@ -1,7 +1,7 @@
 @use "../base/variables" as *;
 
 .post-list {
-    margin-top: 10rem;
+    margin-top: 6rem;
 
     @media (max-width: $bp-medium) {
         margin-top: 0;
