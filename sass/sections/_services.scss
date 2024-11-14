@@ -2,7 +2,9 @@
 
 .services {
     padding: 12rem 0 12rem;
-    background-color: $color-gray-light;
+    //background-color: $color-gray-light;
+    background-image: url(../images/bg-service.svg);
+    background-size: cover;
 
     @media (max-width: $bp-medium) {
         padding: 8rem 0 2rem;

@@ -1722,7 +1722,8 @@ option {
 
 .services {
   padding: 12rem 0 12rem;
-  background-color: #f4f4f4;
+  background-image: url(../images/bg-service.svg);
+  background-size: cover;
 }
 @media (max-width: 50em) {
   .services {

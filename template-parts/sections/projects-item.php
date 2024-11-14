@@ -1,5 +1,5 @@
 <div class="post-item fade-in">
-    <div class="row">
+    <div class="row row-center">
         <?php $post_image_url = get_the_post_thumbnail_url($post->ID, 'large'); ?>
         <?php if ($post_image_url): ?>
             <div class="col-sm-6 post-image">
