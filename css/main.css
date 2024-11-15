@@ -1362,6 +1362,10 @@ option {
   opacity: 1;
   transform: translate(0, 0) rotate(0);
 }
+.hero .hero-content .hero-title .words:nth-of-type(2) .letters {
+  margin-left: -1vw;
+  margin-right: -1vw;
+}
 .hero .hero-content .hero-subtitle {
   font-size: 1.8rem;
   color: #fff;
