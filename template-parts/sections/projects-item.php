@@ -2,13 +2,13 @@
     <div class="row row-center">
         <?php $post_image_url = get_the_post_thumbnail_url($post->ID, 'large'); ?>
         <?php if ($post_image_url): ?>
-            <div class="col-sm-6 post-image">
+            <div class="col-sm-7 post-image">
                 <figure>
                     <img src="<?php echo esc_url($post_image_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy">
                 </figure>
             </div>
         <?php endif; ?>
-        <div class="col-sm-6 post-content">
+        <div class="col-sm-5 post-content">
             <div class="post-desc">
                 <h3 class="post-title"><?php echo esc_html(get_the_title()); ?></h3>
                 <p class="post-desc-work"><?php echo esc_html(get_field('my_role')); ?></p>
