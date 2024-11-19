@@ -20,7 +20,7 @@ jQuery(document).ready(function($){
     // backToTop();
     //splitTextIntoSpans(); 
 
-
+    //swiperSlider();
 });
 
 
@@ -263,5 +263,33 @@ function toggleContent() {
        $('.services-nav li a').not($this).removeClass('active');
 
        $('#' + dataId).addClass('active').siblings().removeClass('active');
+    });
+}
+
+function swiperSlider() {
+
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        freeMode: true,
+        loop: true,
+        allowTouchMove: false,
+        autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        },
+        slidesPerView: 2.5,
+        spaceBetween: 0,
+        speed: 6000,
+        breakpoints: {
+            1400: {
+              slidesPerView: 7.5, 
+            },
+            1100: {
+                slidesPerView: 4.5, 
+            },
+            700: {
+                slidesPerView: 3.5, 
+              },
+          }
     });
 }

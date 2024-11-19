@@ -1,0 +1,32 @@
+@use "../base/variables" as *;
+
+.swiper-container {
+    overflow-x: hidden;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-top: -8rem;
+}
+
+.swiper {
+    width: 100%;
+    overflow: hidden;
+    background-color: $color-primary;
+    padding: 1.5rem 0;
+    transform:  rotate(-2deg);
+    
+    .swiper-wrapper {
+
+        transition-timing-function: linear;
+
+        .swiper-slide {
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            color: $color-dark;
+
+            @media (max-width: $bp-large) {
+                font-size: 3rem;
+            }
+        }
+    }
+  }

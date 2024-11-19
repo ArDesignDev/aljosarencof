@@ -57,6 +57,10 @@ h2 {
     margin-bottom: 3rem;
     font-weight: 600;
 
+    @media (max-width: $bp-large) {
+        font-size: 6rem;
+    }
+
     @media (max-width: $bp-medium) {
         font-size: 4rem;
     }

@@ -135,6 +135,11 @@ h2 {
   margin-bottom: 3rem;
   font-weight: 600;
 }
+@media (max-width: 70em) {
+  h2 {
+    font-size: 6rem;
+  }
+}
 @media (max-width: 50em) {
   h2 {
     font-size: 4rem;
@@ -1269,6 +1274,60 @@ option {
   background-image: url(../images/minus.svg);
 }
 
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 4rem 0;
+  margin-top: -8rem;
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 3.5rem 0;
+  background-color: #2bd9e9;
+  transform: rotate(-2deg);
+  overflow: hidden;
+  padding: 1.5rem 0;
+}
+.marquee .marquee-inner {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 70s linear infinite;
+}
+.marquee .marquee-inner .marquee-text {
+  display: inline-block;
+  font-size: 4rem;
+  margin-bottom: 0;
+  font-weight: bold;
+  padding-bottom: 0;
+}
+@media (max-width: 50em) {
+  .marquee .marquee-inner .marquee-text {
+    font-size: 2rem;
+  }
+}
+.marquee .marquee-inner .marquee-text span {
+  color: #222;
+  padding: 0 4rem;
+}
+@media (max-width: 50em) {
+  .marquee .marquee-inner .marquee-text span {
+    padding: 0 2rem;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
 .loader-screen {
   position: fixed;
   top: 0;

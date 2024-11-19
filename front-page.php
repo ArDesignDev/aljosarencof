@@ -20,6 +20,7 @@ get_header();
 		<?php get_template_part('template-parts/sections/hero'); ?>
 		<?php get_template_part('template-parts/sections/about'); ?>
 		<?php get_template_part('template-parts/sections/services'); ?>
+		<?php get_template_part('template-parts/sections/marquee'); ?>
 		<?php get_template_part('template-parts/sections/projects'); ?>
 		<?php get_template_part('template-parts/sections/contact'); ?>
 

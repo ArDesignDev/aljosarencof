@@ -1,0 +1,60 @@
+@use "../base/variables" as *;
+
+.marquee-container {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 4rem 0;
+    margin-top: -8rem;
+}
+.marquee {
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 3.5rem 0;
+    background-color: $color-primary;
+    transform: rotate(-2deg);
+    overflow: hidden;
+    padding: 1.5rem 0;
+
+    .marquee-inner {
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: marquee 70s linear infinite;
+  
+      .marquee-text {
+        display: inline-block;
+        font-size: 4rem;
+        margin-bottom: 0;
+        font-weight: bold;
+        padding-bottom: 0;
+
+        @media (max-width: $bp-medium) {
+            font-size: 2rem;
+        }
+        
+        span {
+            color: $color-dark;
+            padding: 0 4rem;
+
+            @media (max-width: $bp-medium) {
+                padding: 0 2rem;
+            }
+        }
+       
+      }
+    }
+  
+  }
+
+
+// marquee - infinite text
+@keyframes marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+}
