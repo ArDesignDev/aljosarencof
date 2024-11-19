@@ -1296,11 +1296,11 @@ option {
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  animation: marquee 70s linear infinite;
+  animation: marquee 80s linear infinite;
 }
 .marquee .marquee-inner .marquee-text {
   display: inline-block;
-  font-size: 4rem;
+  font-size: 3.6rem;
   margin-bottom: 0;
   font-weight: bold;
   padding-bottom: 0;
@@ -1541,7 +1541,7 @@ option {
 }
 
 .categories-section {
-  padding: 18rem 0 5rem;
+  padding: 18rem 0 8rem;
 }
 @media (max-width: 50em) {
   .categories-section {
@@ -1986,6 +1986,7 @@ option {
   transform-origin: center;
   width: 100%;
 }
+
 .category .category-header {
   position: relative;
   height: 45rem;

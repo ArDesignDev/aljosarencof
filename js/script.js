@@ -13,6 +13,8 @@ jQuery(document).ready(function($){
     splitText();
 
     animateOnScroll();
+
+    skillSet();
     
     // accordion();
     // sliders
@@ -292,4 +294,21 @@ function swiperSlider() {
               },
           }
     });
+}
+
+function skillSet() {
+    const skillsText = $('.skills-text').text(); // Get the raw text from the field
+    const skillsArray = skillsText.split('|'); // Split the text by '|'
+
+    // Create the spans and insert them into the container
+    let spansHTML = '';
+    skillsArray.forEach(skill => {
+        const trimmedSkill = skill.trim(); // Remove any extra whitespace
+        if (trimmedSkill) {
+            spansHTML += `<span>${trimmedSkill}</span>\n`;
+        }
+    });
+
+    // Replace the original content with the spans
+    $('.skills-text').html(spansHTML);
 }
