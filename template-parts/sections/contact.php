@@ -1,4 +1,4 @@
-<section class="section section-contact" id="contact">
+<section class="section contact" id="contact">
     <div class="container">
         
         <!-- Left Section: Contact Content from ACF Fields -->
@@ -22,6 +22,7 @@
             <div class="section-form fade-in">
                 <?php echo do_shortcode('[contact-form-7 id="733af6a" title="Contact us"]'); ?>
             </div>
+       
         </div>
 
     </div>

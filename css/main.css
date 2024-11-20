@@ -740,15 +740,16 @@ a:hover {
   width: 17rem;
   height: 17rem;
   display: block;
-  background: #222;
+  background: #62bfc9;
   border-radius: 50%;
   opacity: 97%;
   transition: all 0.37s;
   z-index: -1;
+  animation: morph 5s infinite;
 }
 .btn-flip:hover::after {
   transform: scale(1.1);
-  background: #62bfc9;
+  background: #222;
 }
 
 /* Initial styles for the front and back spans */
@@ -928,6 +929,23 @@ a:hover {
   border-color: #2bd9e9;
 }
 
+@keyframes morph {
+  0% {
+    border-radius: 50% 40% 60% 30%/30% 60% 40% 50%;
+  }
+  25% {
+    border-radius: 60% 30% 70% 40%/40% 70% 30% 60%;
+  }
+  50% {
+    border-radius: 40% 70% 50% 60%/60% 30% 70% 40%;
+  }
+  75% {
+    border-radius: 70% 50% 40% 60%/50% 60% 40% 70%;
+  }
+  100% {
+    border-radius: 50% 40% 60% 30%/30% 60% 40% 50%;
+  }
+}
 input[type=text],
 input[type=email],
 input[type=tel],
@@ -1446,6 +1464,17 @@ option {
   transform: translate(0, 0);
 }
 
+@keyframes morph {
+  0% {
+    border-radius: 50% 40% 60% 30%/30% 60% 40% 50%;
+  }
+  50% {
+    border-radius: 40% 60% 50% 40%/50% 40% 60% 30%;
+  }
+  100% {
+    border-radius: 50% 40% 60% 30%/30% 60% 40% 50%;
+  }
+}
 .section {
   padding: 5rem 0;
 }
@@ -1515,30 +1544,6 @@ option {
   opacity: 1;
   transform: translateY(0);
 }
-.section.section-contact {
-  padding: 14rem 0 20rem;
-  background-color: #222;
-  background: linear-gradient(333deg, rgb(34, 34, 34) 50%, rgb(39, 39, 39) 100%);
-}
-@media (max-width: 50em) {
-  .section.section-contact {
-    padding: 8rem 0 6rem;
-  }
-}
-.section.section-contact h2, .section.section-contact p {
-  color: #fff;
-}
-.section.section-contact .section-content {
-  padding-right: 10rem;
-}
-@media (max-width: 50em) {
-  .section.section-contact .section-content {
-    padding-right: 0;
-  }
-}
-.section.section-contact .section-content-info {
-  padding-top: 4rem;
-}
 
 .categories-section {
   padding: 18rem 0 8rem;
@@ -1550,6 +1555,16 @@ option {
 }
 .categories-section .categories-section-title {
   margin-bottom: 0;
+}
+.categories-section .categories-section-subtitle {
+  max-width: 131rem;
+  margin-top: 2rem;
+  font-size: 2.6rem;
+}
+@media (max-width: 50em) {
+  .categories-section .categories-section-subtitle {
+    display: none;
+  }
 }
 .categories-section .category-navigation {
   display: flex;
@@ -1765,10 +1780,16 @@ option {
 .about .about-content .about-desc-toggle {
   background-color: transparent;
   border: none;
-  color: #2bd9e9;
+  color: #222;
   font-size: 1.8rem;
-  border-bottom: 1px solid #2bd9e9;
+  border-bottom: 1px solid #222;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.about .about-content .about-desc-toggle:hover {
+  color: #2bd9e9;
+  border-bottom: 1px solid #2bd9e9;
 }
 .about .about-content .about-desc-toggle .about-desc-toggle-less {
   display: none;
@@ -1894,6 +1915,31 @@ option {
 }
 .services .services-list .services-item.active {
   display: block;
+}
+
+.contact {
+  padding: 14rem 0 20rem;
+  background-color: #222;
+  background: linear-gradient(333deg, rgb(34, 34, 34) 50%, rgb(39, 39, 39) 100%);
+}
+@media (max-width: 50em) {
+  .contact {
+    padding: 8rem 0 6rem;
+  }
+}
+.contact h2, .contact p {
+  color: #fff;
+}
+.contact .section-content {
+  padding-right: 10rem;
+}
+@media (max-width: 50em) {
+  .contact .section-content {
+    padding-right: 0;
+  }
+}
+.contact .section-content-info {
+  padding-top: 4rem;
 }
 
 .post-list {

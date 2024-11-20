@@ -47,10 +47,17 @@
         .about-desc-toggle {
             background-color: transparent;
             border: none;
-            color: $color-primary;
+            color: $color-dark;
             font-size: $base-size;
-            border-bottom: 1px solid $color-primary;
+            border-bottom: 1px solid $color-dark;
+            font-weight: bold;
             cursor: pointer;
+            transition: $transition;
+
+            &:hover {
+                color: $color-primary;
+                border-bottom: 1px solid $color-primary;
+            }
 
             .about-desc-toggle-less {
                 display: none;
@@ -70,6 +77,4 @@
             display: none;
         }
     }
-
-
 }

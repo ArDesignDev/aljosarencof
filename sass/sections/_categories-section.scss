@@ -11,6 +11,16 @@
         margin-bottom: 0;
     }
 
+    .categories-section-subtitle {
+        max-width: 131rem;
+        margin-top: 2rem;
+        font-size: 2.6rem;
+
+        @media (max-width: $bp-medium) {
+            display: none;
+        }
+    }
+
     // nav
     .category-navigation {
         display: flex;

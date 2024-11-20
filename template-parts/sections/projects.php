@@ -4,8 +4,8 @@
         <!-- Category Navigation Header -->
         <div class="categories-section-header">
             <h2 class="categories-section-title text-split"><?php echo the_field('work_title'); ?></h2>
+            <p class="categories-section-subtitle fade-in"><?php echo the_field('work_subtitle'); ?></p>
         </div>
-
         <!-- Project List -->
         <div id="posts-container" class="post-list">
                 <?php

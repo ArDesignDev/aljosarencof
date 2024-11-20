@@ -33,7 +33,6 @@
                                 <span class="about-desc-toggle-more">Read More</span>
                                 <span class="about-desc-toggle-less">Read less</span>
                             </button>
-      
                         </div>
                     <?php endif;
                 endif; ?>
