@@ -661,23 +661,29 @@ a:hover {
 }
 
 .btn-link {
-  border-bottom: 2px solid #222;
   font-size: 1.8rem;
   display: inline-block;
   margin-top: 3rem;
-  padding: 1rem 3rem 1rem 0;
+  padding: 1rem 3rem 1rem 4rem;
   transition: all 0.4s ease-in-out;
+  color: #fff;
+  background-color: #222;
+  border-radius: 3rem;
 }
 .btn-link svg {
   position: relative;
   transform: translateY(0.5rem);
   fill: #fff;
+  transition: all 0.4s ease-in-out;
 }
 .btn-link:hover {
-  color: #fff;
-  background-color: #222;
+  background-color: #2bd9e9;
   border-radius: 3rem;
   padding-left: 4rem;
+  color: #222;
+}
+.btn-link:hover svg {
+  fill: #222;
 }
 
 .btn-arrow a {
@@ -740,16 +746,15 @@ a:hover {
   width: 17rem;
   height: 17rem;
   display: block;
-  background: #62bfc9;
+  background: #222;
   border-radius: 50%;
   opacity: 97%;
   transition: all 0.37s;
   z-index: -1;
-  animation: morph 5s infinite;
 }
 .btn-flip:hover::after {
   transform: scale(1.1);
-  background: #222;
+  background: #62bfc9;
 }
 
 /* Initial styles for the front and back spans */

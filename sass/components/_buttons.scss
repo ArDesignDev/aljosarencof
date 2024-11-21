@@ -36,24 +36,31 @@
 }
 
 .btn-link {
-    border-bottom: 2px solid $color-dark;
     font-size: $base-size;
     display: inline-block;
     margin-top: 3rem;
-    padding: 1rem 3rem 1rem 0;
+    padding: 1rem 3rem 1rem 4rem;
     transition: $transition;
+    color: #fff;
+    background-color: $color-dark;
+    border-radius: 3rem;
 
     svg {
         position: relative;
         transform: translateY(.5rem);
         fill: #fff;
+        transition: $transition;
     }
 
     &:hover {
-        color: #fff;
-        background-color: $color-dark;
+        background-color: $color-primary;
         border-radius: 3rem;
         padding-left: 4rem;
+        color: $color-dark;
+
+        svg {
+            fill: $color-dark;
+        }
     }
 }
 
@@ -124,18 +131,17 @@ $speed: 0.75s;
         width: 17rem;
         height: 17rem;
         display: block;
-        background: $color-secondary;
+        background: $color-dark;
         border-radius: 50%;
         opacity: 97%;
         transition: all .37s ;
         z-index: -1;
-        animation: morph 5s infinite;
     }
 
     &:hover {
         &::after {
             transform: scale(1.1);
-           background: $color-dark;
+           background: $color-secondary;
             
         }
     }
