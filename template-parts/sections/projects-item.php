@@ -4,9 +4,11 @@
         <?php $post_image_url = get_the_post_thumbnail_url($post->ID, 'large'); ?>
         <?php if ($post_image_url): ?>
             <div class="col-sm-7 post-image">
-                <figure>
-                    <img src="<?php echo esc_url($post_image_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy">
-                </figure>
+                <a href="<?php echo esc_html(get_field('web_link')); ?>" target="_blank">
+                    <figure>
+                        <img src="<?php echo esc_url($post_image_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy">
+                    </figure>
+                </a>
             </div>
         <?php endif; ?>
         <div class="col-sm-5 post-content">

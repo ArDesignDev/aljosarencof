@@ -8,6 +8,14 @@
         padding: 0 0 7rem 0;
     }
 
+    p {
+        font-size: 2rem;
+
+        @media (max-width: $bp-medium) {
+            font-size: 1.7rem;
+        }
+    }
+
     .about-images {
         .about-images-inner {
             position: relative;
@@ -21,7 +29,7 @@
                 }
 
                 @media (max-width: $bp-medium) {
-                    margin: 0 -3rem;
+                    margin: 2rem -1rem 0;
                 }
 
                 img {

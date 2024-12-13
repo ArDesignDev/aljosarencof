@@ -271,7 +271,6 @@ function toggleContent() {
 function swiperSlider() {
 
     const swiper = new Swiper('.swiper', {
-        // Optional parameters
         freeMode: true,
         loop: true,
         allowTouchMove: false,
