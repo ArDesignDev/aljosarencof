@@ -1,4 +1,4 @@
-<section class="hero" id="hero">
+<section class="hero section-active" id="hero">
     <span aria-hidden="true" 
           class="hero-background"
           style="background-image:url('<?php echo esc_url(get_field('hero_background_image')); ?>');">

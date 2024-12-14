@@ -1,27 +1,24 @@
 jQuery(document).ready(function($){
-
     loader();
     setTimeout(animationOnLoad, 600);
-
     navOnScroll();
     smoothScroll();
     mobileMenu();
     toggleContent();
     readMore();
-
     checkFadeIn();
     splitText();
-
     animateOnScroll();
-
     skillSet();
+    activeNavOnScroll();
+    loadMorePosts();
+    courserEffect();
     
     // accordion();
     // sliders
     // scrollingBanner();
     // backToTop();
     //splitTextIntoSpans(); 
-
     //swiperSlider();
 });
 
@@ -30,7 +27,10 @@ jQuery(window).scroll(function($){
     navOnScroll();
     checkFadeIn();
     animateOnScroll();
+    activeNavOnScroll();
 });
+
+
 
 function isInViewport(element) {
     const elementTop = $(element).offset().top;
@@ -310,4 +310,192 @@ function skillSet() {
 
     // Replace the original content with the spans
     $('.skills-text').html(spansHTML);
+}
+
+function activeNavOnScroll() {
+    var scrollDistance = jQuery(window).scrollTop();
+  
+    jQuery('.section-active').each(function(i) {
+        if (jQuery(this).position().top-270 <= scrollDistance) {
+            jQuery('#site-navigation ul li a.active-nav').removeClass('active-nav');
+            jQuery('#site-navigation ul li a').eq(i).addClass('active-nav');
+        }
+    });
+}
+
+function loadMorePosts() {
+  
+    // Event listener for the Load More button
+    jQuery(document).on('click', '#load-more', function() {
+      var nextPage = parseInt(jQuery(this).data('page'), 10) + 1; // Increment the page number
+  
+      jQuery.ajax({
+        url: ajax_url,
+        type: 'POST',
+        data: {
+          action: 'filter_posts_by_category',
+          page: nextPage
+        },
+        beforeSend: function() {
+          jQuery('#load-more').text('Loading...'); // Show loading text
+        },
+        success: function(response) {
+          
+          if (response.trim() !== '') {
+            // If the response has content, append the new posts
+            var newItems = jQuery('<div/>').html(response).find('.post-item').hide();
+            jQuery('#posts-container').append(newItems);
+            
+            // Add 'active' class to the first new item and fade it in immediately
+            newItems.first().show().addClass('active');
+            
+            // Fade in the rest of the items with delay
+            newItems.slice(1).each(function(i) {
+              jQuery(this).delay(i * 300).fadeIn(600);
+            });
+  
+            courserEffect();
+  
+            // Update the 'Load More' button with the new page number
+            jQuery('#load-more').text('Load More').data('page', nextPage);
+          } else {
+            // If the response is empty, hide the Load More button
+            jQuery('#load-more').text('No more projects');
+          }
+  
+        },
+        error: function() {
+          // In case of an error, reset the Load More button text
+          jQuery('#load-more').text('Load More');
+        }
+      });
+    });
+ }
+
+function courserEffect() {
+  const cursor = document.querySelector("#cursor");
+  const cursorBorder = document.querySelector("#cursor-border");
+  const cursorPos = { x: 0, y: 0 };
+  const cursorBorderPos = { x: 0, y: 0 };
+
+  document.addEventListener("mousemove", (e) => {
+    cursorPos.x = e.clientX;
+    cursorPos.y = e.clientY;
+
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+
+  requestAnimationFrame(function loop() {
+    const easing = 8;
+    cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easing;
+    cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easing;
+
+    cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
+    requestAnimationFrame(loop);
+  });
+
+  // Reusable function to apply hover effects to a set of elements
+  function applyHoverEffects() {
+    document.querySelectorAll("a, .read-more, .btn, .wpcf7-submit, .btn-load-more, button").forEach((link) => {
+      link.addEventListener("mouseover", (e) => {
+        cursorBorder.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+        cursorBorder.style.setProperty("--size", "40px");
+      });
+
+      link.addEventListener("mouseout", (e) => {
+        cursorBorder.style.backgroundColor = "#2bd9e9";
+        cursorBorder.style.setProperty("--size", "12px");
+      });
+    });
+
+    document.querySelectorAll(".services-nav a").forEach((link) => {
+        link.addEventListener("mouseover", (e) => {
+          cursorBorder.style.backgroundColor = "rgba(14, 234, 241, 0.2)";
+          cursorBorder.style.setProperty("--size", "40px");
+        });
+  
+        link.addEventListener("mouseout", (e) => {
+          cursorBorder.style.backgroundColor = "#2bd9e9";
+          cursorBorder.style.setProperty("--size", "12px");
+        });
+      });
+
+    document.querySelectorAll(".post-image").forEach((div) => {
+      div.addEventListener("mouseover", (e) => {
+        cursorBorder.style.backgroundColor = "rgba(0, 0, 0, 1)";
+        cursorBorder.style.setProperty("--size", "90px");
+        cursorBorder.textContent = "Visit website";
+        cursorBorder.style.display = "flex";
+        cursorBorder.style.alignItems = "center";
+        cursorBorder.style.justifyContent = "center";
+        cursorBorder.style.color = "#fff";
+        cursorBorder.style.fontSize = "16px";
+        cursorBorder.style.textAlign = "center";
+      });
+
+      div.addEventListener("mouseout", (e) => {
+        cursorBorder.style.backgroundColor = "#2bd9e9";
+        cursorBorder.style.setProperty("--size", "12px");
+        cursorBorder.textContent = "";
+        cursorBorder.style.display = "block";
+        cursorBorder.style.color = "unset";
+      });
+    });
+
+    document.querySelectorAll(".service-section-more a").forEach((div) => {
+      div.addEventListener("mouseover", (e) => {
+        cursorBorder.style.backgroundColor = "#e31b6deb";
+        cursorBorder.style.borderColor = "#e31b6deb";
+        cursorBorder.style.setProperty("--size", "60px");
+        cursorBorder.textContent = "Expend";
+        cursorBorder.style.display = "flex";
+        cursorBorder.style.alignItems = "center";
+        cursorBorder.style.justifyContent = "center";
+        cursorBorder.style.color = "#fff";
+        cursorBorder.style.fontSize = "12px";
+        cursorBorder.style.textAlign = "center";
+        cursorBorder.style.fontWeight = "bold";
+      });
+
+      div.addEventListener("mouseout", (e) => {
+        cursorBorder.style.backgroundColor = "unset";
+        cursorBorder.style.borderColor = "#2fc0cc";
+        cursorBorder.style.setProperty("--size", "20px");
+        cursorBorder.textContent = "";
+        cursorBorder.style.display = "block";
+        cursorBorder.style.color = "unset";
+      });
+    });
+
+    document.querySelectorAll(".project-section-item-text button.read-more").forEach((div) => {
+      div.addEventListener("mouseover", (e) => {
+        cursorBorder.style.backgroundColor = "#e31b6deb";
+        cursorBorder.style.borderColor = "#e31b6deb";
+        cursorBorder.style.setProperty("--size", "60px");
+        cursorBorder.textContent = "Pop up";
+        cursorBorder.style.display = "flex";
+        cursorBorder.style.alignItems = "center";
+        cursorBorder.style.justifyContent = "center";
+        cursorBorder.style.color = "#fff";
+        cursorBorder.style.fontSize = "12px";
+        cursorBorder.style.textAlign = "center";
+        cursorBorder.style.fontWeight = "bold";
+      });
+
+      div.addEventListener("mouseout", (e) => {
+        cursorBorder.style.backgroundColor = "unset";
+        cursorBorder.style.borderColor = "#2fc0cc";
+        cursorBorder.style.setProperty("--size", "20px");
+        cursorBorder.textContent = "";
+        cursorBorder.style.display = "block";
+        cursorBorder.style.color = "unset";
+      });
+    });
+  }
+
+  // Initially apply hover effects to all existing elements
+  applyHoverEffects();
+
+  // Return the applyHoverEffects function so it can be reused
+  return applyHoverEffects;
 }

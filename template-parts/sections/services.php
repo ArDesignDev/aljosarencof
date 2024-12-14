@@ -1,4 +1,4 @@
-<section class="services" id="services">
+<section class="services section-active" id="services">
     <div class="container">
         <div class="services-header">
             <h2 class="text-split"><?php the_field('service_title'); ?></h2>

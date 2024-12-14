@@ -1,15 +1,4 @@
 <?php
-
-function enqueue_load_more_script() {
-    wp_enqueue_script('load-more', get_template_directory_uri() . '/js/admin/load-more-home.js', array('jquery'), null, true);
-
-    // Localize script to pass AJAX URL dynamically
-    wp_localize_script('load-more', 'ajax_object', array(
-        'ajax_url' => admin_url('admin-ajax.php')
-    ));
-}
-add_action('wp_enqueue_scripts', 'enqueue_load_more_script');
-
 // AJAX Handler for Loading More Posts
 function filter_posts_by_category() {
     $posts_per_page = 4; // Number of posts per page

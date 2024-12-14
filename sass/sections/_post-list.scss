@@ -21,6 +21,14 @@
 
             .post-desc {
                 position: relative;
+
+                .btn-link {
+                    display: none;
+
+                    @media (max-width: $bp-medium) {
+                        display: block;
+                    }
+                }
             }
 
             .post-title {

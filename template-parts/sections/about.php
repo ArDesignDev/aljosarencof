@@ -1,4 +1,4 @@
-<section class="section about" id="about">
+<section class="section about section-active" id="about">
     <div class="container">
         <div class="row">
             <!-- Image Column -->

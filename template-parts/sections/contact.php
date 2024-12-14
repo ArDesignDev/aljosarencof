@@ -1,4 +1,4 @@
-<section class="section contact" id="contact">
+<section class="section contact section-active" id="contact">
     <div class="container">
         
         <!-- Left Section: Contact Content from ACF Fields -->

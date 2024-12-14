@@ -209,3 +209,16 @@ add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mime
 		  </style>';
   }
   add_action( 'admin_head', 'fix_svg' );
+
+
+/**
+ * Redirect single posts to the homepage
+ */
+function redirect_posts_to_homepage() {
+    // Check if it's a single post and not in the admin area
+    if (is_single() && !is_admin()) {
+        wp_redirect(home_url(), 301); // Permanent redirect to the homepage
+        exit;
+    }
+}
+add_action('template_redirect', 'redirect_posts_to_homepage');

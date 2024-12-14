@@ -1,4 +1,4 @@
-<section class="categories-section" id="work">
+<section class="categories-section section-active" id="work">
     <div class="container">
         
         <!-- Category Navigation Header -->

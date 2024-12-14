@@ -82,6 +82,59 @@ img {
   visibility: hidden !important;
 }
 
+/* Scrollbar Styling for desktop*/
+@media (min-width: 50em) {
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #222;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #333;
+  }
+}
+#cursor {
+  position: fixed;
+  top: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999999999;
+}
+@media (max-width: 70em) {
+  #cursor {
+    display: none;
+  }
+}
+
+#cursor-border {
+  --size: 12px;
+  position: fixed;
+  top: calc(var(--size) / -2);
+  left: calc(var(--size) / -2);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: #2bd9e9;
+  border: none;
+  pointer-events: none;
+  transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out, background-color 0.15s ease-out;
+  z-index: 999999999999;
+}
+@media (max-width: 70em) {
+  #cursor-border {
+    display: none !important;
+  }
+}
+
 td, th, a {
   font-size: inherit;
   color: #222;
@@ -376,7 +429,7 @@ a:hover {
   content: "";
   position: absolute;
   width: 0;
-  height: 3px;
+  height: 2px;
   background-color: #2bd9e9;
   bottom: 0;
   left: 50%;
@@ -388,6 +441,9 @@ a:hover {
 }
 .header .header-inner .header-nav .menu a:hover::after {
   width: 100%;
+}
+.header .header-inner .header-nav .menu a.active-nav {
+  color: #2bd9e9;
 }
 .header .header-inner .header-cta {
   flex: 0 0 auto;
@@ -1997,6 +2053,14 @@ option {
 }
 .post-list .post-item .post-content .post-desc {
   position: relative;
+}
+.post-list .post-item .post-content .post-desc .btn-link {
+  display: none;
+}
+@media (max-width: 50em) {
+  .post-list .post-item .post-content .post-desc .btn-link {
+    display: block;
+  }
 }
 .post-list .post-item .post-content .post-title {
   margin-bottom: 0.5rem;
