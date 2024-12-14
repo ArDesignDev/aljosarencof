@@ -1,0 +1,65 @@
+@use "../base/variables" as *;
+
+.references {
+    padding: 8rem 0;
+    background-color: #fff;
+    text-align: center;
+
+    @media (max-width: $bp-medium) {
+        padding-top: 4rem;
+    }
+
+    p br {
+        @media (max-width: $bp-medium) {
+            display: none;
+        }
+    }
+
+    .swiper-container {
+        position: relative;
+        margin-top: 5rem;
+
+        @media (max-width: $bp-medium) {
+            margin-left: -3rem;
+            margin-right: -3rerm;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 12rem;
+            height: 100%;
+            display: block;
+            right: 0;
+            top: 0;
+            background-image: url(../images/gradiant-right.svg);
+            z-index: 1;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 12rem;
+            height: 100%;
+            display: block;
+            left: 0;
+            top: 0;
+            background-image: url(../images/gradiant-left.svg);
+            z-index: 3;
+        }
+    }
+
+    .swiper-reverse {
+
+        .swiper {
+            transform: rotate(180deg);
+            .swiper-slide {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .swiper-wrapper {
+        transition-timing-function: linear;
+    }
+}

@@ -18,6 +18,7 @@
 @use "components/forms";
 @use "components/accordion";
 @use "components/marquee";
+@use "components/swiper";
 @use "components/loader-screen";
 @use "components/cookie-banner";
 
@@ -30,6 +31,7 @@
 @use "sections/about";
 @use "sections/services";
 @use "sections/contact";
+@use "sections/references";
 @use "sections/post-list";
 
 // Page-specific styles

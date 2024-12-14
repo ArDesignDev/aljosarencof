@@ -13,13 +13,14 @@ jQuery(document).ready(function($){
     activeNavOnScroll();
     loadMorePosts();
     courserEffect();
+    swiperSlider();
     
     // accordion();
     // sliders
     // scrollingBanner();
     // backToTop();
     //splitTextIntoSpans(); 
-    //swiperSlider();
+    
 });
 
 
@@ -275,15 +276,15 @@ function swiperSlider() {
         loop: true,
         allowTouchMove: false,
         autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
+            delay: 0,
+            disableOnInteraction: false,
         },
         slidesPerView: 2.5,
         spaceBetween: 0,
-        speed: 6000,
+        speed: 4000,
         breakpoints: {
             1400: {
-              slidesPerView: 7.5, 
+              slidesPerView: 5.5, 
             },
             1100: {
                 slidesPerView: 4.5, 
@@ -292,6 +293,12 @@ function swiperSlider() {
                 slidesPerView: 3.5, 
               },
           }
+    });
+
+    const swiperElement = document.querySelector('.swiper');
+
+    swiperElement.addEventListener('click', () => {
+        swiper.autoplay.start(); 
     });
 }
 
