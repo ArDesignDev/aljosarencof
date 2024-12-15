@@ -2453,7 +2453,7 @@ button.swiper-pagination-bullet {
   transition: all 1.4s ease-in-out;
 }
 .categories-section .category-item:hover .category-image img {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
 .scrolling-banner {
@@ -2751,6 +2751,14 @@ button.swiper-pagination-bullet {
 .contact .section-content-info {
   padding-top: 4rem;
 }
+.contact .wpcf7-acceptance .wpcf7-list-item {
+  margin-left: 0 !important;
+}
+@media (max-width: 50em) {
+  .contact .wpcf7-acceptance .wpcf7-list-item-label {
+    line-height: 1.8;
+  }
+}
 
 .references {
   padding: 8rem 0;
@@ -2912,7 +2920,7 @@ button.swiper-pagination-bullet {
   transition: transform 2.4s ease-in-out;
 }
 .post-list .post-item .post-image figure:hover img {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .category .category-header {

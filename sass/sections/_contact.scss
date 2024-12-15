@@ -24,4 +24,16 @@
     .section-content-info {
         padding-top: 4rem;
     }
+
+    .wpcf7-acceptance {
+        .wpcf7-list-item {
+            margin-left: 0 !important;
+        }
+
+        .wpcf7-list-item-label {
+            @media (max-width: $bp-medium) {
+                line-height: 1.8;
+            }
+        }
+    }
 }

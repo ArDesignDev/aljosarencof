@@ -1,7 +1,7 @@
 <div class="references section-active">
     <div class="container">
-        <h2> <?php echo the_field('reference_title'); ?></h2>
-        <p><?php echo the_field('references_text'); ?> </p>
+        <h2 class="text-split"> <?php echo the_field('reference_title'); ?></h2>
+        <div class="fade-in"><?php echo the_field('references_text'); ?> </div>
 
         <div class="swiper-container">
             <div class="swiper">

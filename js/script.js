@@ -237,6 +237,7 @@ function animateOnScroll() {
     const services = jQuery('.services').length ? jQuery('.services').offset().top - 600 : null;
     const projects = jQuery('.categories-section').length ? jQuery('.categories-section').offset().top - 600 : null;
     const contact = jQuery('.contact').length ? jQuery('.contact').offset().top - 600 : null;
+    const references = jQuery('.references').length ? jQuery('.references').offset().top - 600 : null;
 
    
     if(wScroll>about) {
@@ -254,6 +255,10 @@ function animateOnScroll() {
     if(wScroll>contact) {
         animateLetters('.contact .letters', 40, 'active')
     } 
+
+    if(wScroll>references) {
+      animateLetters('.references .letters', 40, 'active')
+  } 
 
 }
 
