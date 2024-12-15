@@ -1,6 +1,6 @@
 <section class="section about section-active" id="about">
     <div class="container">
-        <div class="row">
+        <div class="row row-center">
             <!-- Image Column -->
             <div class="col-sm-5 about-images fade-in">
                 <div class="about-images-inner">
