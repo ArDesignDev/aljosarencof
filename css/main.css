@@ -2547,14 +2547,6 @@ button.swiper-pagination-bullet {
     padding: 0 0 7rem 0;
   }
 }
-.about p {
-  font-size: 2rem;
-}
-@media (max-width: 50em) {
-  .about p {
-    font-size: 1.7rem;
-  }
-}
 .about .about-images .about-images-inner {
   position: relative;
 }
