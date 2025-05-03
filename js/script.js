@@ -344,6 +344,10 @@ function loadMorePosts() {
    const loadMoreText = jQuery('.btn-load-more').data('loading-text');
    const noMoreText = jQuery('.btn-no-more').data('no-more-text');
    const loading = jQuery('.btn-loading').data('loading');
+
+   console.log(loadMoreText);
+   console.log(noMoreText);
+   console.log(loading);
   
     // Event listener for the Load More button
     jQuery(document).on('click', '#load-more', function() {
