@@ -2399,6 +2399,9 @@ button.swiper-pagination-bullet {
 .section .section-content .section-desc {
   margin-bottom: 4rem;
 }
+.section .section-content .section-desc a {
+  text-decoration: underline;
+}
 .section .section-content .section-desc p {
   display: inline;
 }

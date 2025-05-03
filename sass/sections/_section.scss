@@ -32,6 +32,10 @@
 
         .section-desc {
             margin-bottom: 4rem;
+
+            a {
+                text-decoration: underline;
+            } 
             
             p {
                 display: inline;

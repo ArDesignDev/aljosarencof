@@ -20,7 +20,13 @@
 
             <?php endif; ?>
             <div class="section-form fade-in">
-                <?php echo do_shortcode('[contact-form-7 id="733af6a" title="Contact us"]'); ?>
+                <?php
+                if (function_exists('pll_current_language') && pll_current_language() === 'sl') {
+                    echo do_shortcode('[contact-form-7 id="a901eb3" title="Contact us SI"]');
+                } else {
+                    echo do_shortcode('[contact-form-7 id="733af6a" title="Contact us"]');
+                }
+                ?>
             </div>
        
         </div>

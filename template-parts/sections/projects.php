@@ -5,9 +5,13 @@ $current_lang = pll_current_language();
 if ($current_lang === 'sl') {
     $load_more_text = get_field('load_more_text_si', 'option');
     $button_text_visit = get_field('visit_website_text_si', 'option');
+    $button_no_more = get_field('no_more_text_si', 'option');
+    $button_loading = get_field('loading_text_si', 'option');
 } else {
     $load_more_text = get_field('load_more_text', 'option');
     $button_text_visit = get_field('visit_website_text', 'option');
+    $button_no_more = get_field('no_more_text', 'option');
+    $button_loading = get_field('loading_text', 'option');
 }
 
 ?>
@@ -21,7 +25,7 @@ if ($current_lang === 'sl') {
             <p class="categories-section-subtitle fade-in"><?php echo the_field('work_subtitle'); ?></p>
         </div>
         <!-- Project List -->
-        <div id="posts-container" class="post-list">
+        <div id="posts-container" class="post-list" data-loading-text="<?php echo $load_more_text; ?>" data-no-more-text="<?php echo $button_no_more; ?>" data-loading="<?php echo $button_loading; ?>">
                 <?php
 
                 $args = array(
