@@ -1,0 +1,41 @@
+@use "../base/variables" as *;
+
+.book-a-call {
+    position: fixed;
+    z-index: 999999;
+    bottom: 2rem;
+    left: 2rem;
+    background-color: $color-dark;
+    border-radius: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    a {
+        color: #fff;
+        display: flex;
+        font-size: 1.6rem;
+        align-items: center;
+        padding: 1rem 2rem 1rem 1rem;
+
+        svg {
+            width: 3rem;
+            height: auto;
+            margin-right: 1rem;
+            transition: $transition;
+        }
+    }
+
+    &:hover {
+        background-color: $color-primary;
+
+        a svg {
+            transform: rotate(360deg);
+        }
+    }
+}

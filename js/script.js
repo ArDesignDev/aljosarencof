@@ -85,12 +85,16 @@ function loader() {
 
 // Nav on scroll
 function navOnScroll() {
-    var headerWrapper = jQuery('.header');
+    const headerWrapper = jQuery('.header');
+    const bookACall = jQuery('.book-a-call');
   
     if (headerWrapper.offset().top > 50){
       headerWrapper.addClass('scrolled');
+      bookACall.addClass('active');
+
     } else {
       headerWrapper.removeClass('scrolled');
+      bookACall.removeClass('active');
     }
 }
 
@@ -390,6 +394,9 @@ function courserEffect() {
   const cursorPos = { x: 0, y: 0 };
   const cursorBorderPos = { x: 0, y: 0 };
 
+  const btnText = jQuery('.btn-visit-website').text();
+  console.log(btnText);
+
   document.addEventListener("mousemove", (e) => {
     cursorPos.x = e.clientX;
     cursorPos.y = e.clientY;
@@ -436,7 +443,7 @@ function courserEffect() {
       div.addEventListener("mouseover", (e) => {
         cursorBorder.style.backgroundColor = "rgba(0, 0, 0, 1)";
         cursorBorder.style.setProperty("--size", "90px");
-        cursorBorder.textContent = "Visit website";
+        cursorBorder.textContent = btnText;
         cursorBorder.style.display = "flex";
         cursorBorder.style.alignItems = "center";
         cursorBorder.style.justifyContent = "center";

@@ -53,10 +53,10 @@
                 opacity: 0;
                 transition: all .4s;
                 display: inline-block; /* Makes inline element transformable */
-                transform: translateY(4rem) rotate(10deg);
+                transform: translateY(4rem) rotate(8deg);
 
                 @media (max-width: $bp-medium) {
-                    transform: translateY(2rem) rotate(5deg);
+                    transform: translateY(2rem) rotate(0);
                 }
 
                 &.active {

@@ -27,7 +27,7 @@ function aquaar_script_enqueue() {
     }
     
     wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '1.0.0', true); 
-	//wp_enqueue_script('customjs', get_template_directory_uri() . '/js/script.js', array(), '1.1.5', true);
+    //wp_enqueue_script('customjs', get_template_directory_uri() . '/js/script.js', array(), '1.1.5', true);
 	wp_enqueue_script('customjs', get_template_directory_uri() . '/js/script.min.js', array(), '1.2.4', true);
 
     // Localize the custom script for AJAX usage

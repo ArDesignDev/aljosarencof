@@ -14,11 +14,13 @@
             $button_url = esc_url($button_link['url']);
             $button_text = esc_html($button_link['title']);
             $button_target = $button_link['target'] ? esc_attr($button_link['target']) : '_self';
+
+            $hero_button_text = get_field('hero_button_text');
         ?>
         <div class="hero-btn">
             <a href="<?php echo $button_url; ?>" target="<?php echo $button_target; ?>" class="btn-flip">
-                <span class="front"><?php echo $button_text; ?></span>
-                <span class="back"><?php echo $button_text; ?></span>
+                <span class="front"><?php echo $hero_button_text; ?></span>
+                <span class="back"><?php echo $hero_button_text; ?></span>
             </a>
         </div>
 

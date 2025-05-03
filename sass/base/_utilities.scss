@@ -84,7 +84,11 @@
     opacity: 0;
     transition: all .4s;
     display: inline-block;
-    transform: translateY(3rem) rotate(10deg);
+    transform: translateY(3rem) rotate(2deg);
+
+    @media (max-width: $bp-medium) {
+        transform: translateY(1rem) rotate(0);
+    }
 
     &.active {
         opacity: 1;
