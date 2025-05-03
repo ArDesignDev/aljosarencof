@@ -81,8 +81,16 @@
 	</footer><!-- .site-footer -->
 </div><!-- #page -->
 <?php
-$meet_me_text = get_field('meet_me_text', 'option');
-$meet_me_text_link = get_field('meet_me_text_link', 'option');
+// Get current language
+$current_lang = pll_current_language();
+
+if ($current_lang === 'sl') {
+    $meet_me_text = get_field('meet_me_text_si', 'option');
+	$meet_me_text_link = get_field('meet_me_text_link_si', 'option');
+} else {
+	$meet_me_text = get_field('meet_me_text', 'option');
+	$meet_me_text_link = get_field('meet_me_text_link', 'option');
+}
 ?>
 
 <div class="book-a-call">
