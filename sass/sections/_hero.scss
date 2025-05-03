@@ -38,6 +38,14 @@
             text-align: center;
         }
 
+        .section-desc {
+            margin-bottom: 4rem;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+
         .hero-title {
             max-width: 68vw;
             margin: 2rem auto;

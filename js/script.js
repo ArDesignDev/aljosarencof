@@ -341,13 +341,9 @@ function activeNavOnScroll() {
 
 function loadMorePosts() {
 
-   const loadMoreText = jQuery('.btn-load-more').data('loading-text');
-   const noMoreText = jQuery('.btn-no-more').data('no-more-text');
-   const loading = jQuery('.btn-loading').data('loading');
-
-   console.log(loadMoreText);
-   console.log(noMoreText);
-   console.log(loading);
+   const loadMoreText = jQuery('#posts-container').data('loading-text');
+   const noMoreText = jQuery('#posts-container').data('no-more-text');
+   const loading = jQuery('#posts-container').data('loading');
   
     // Event listener for the Load More button
     jQuery(document).on('click', '#load-more', function() {
@@ -381,7 +377,7 @@ function loadMorePosts() {
             courserEffect();
   
             // Update the 'Load More' button with the new page number
-            jQuery('#load-more').text(loadMoreText ? loadMoreText : 'Load More').data('page', nextPage);
+            jQuery('#load-more').text(loadMoreText ? loadMoreText : "Load more").data('page', nextPage);
           } else {
             // If the response is empty, hide the Load More button
             jQuery('#load-more').text(noMoreText ? noMoreText : 'No more projects');
@@ -390,7 +386,7 @@ function loadMorePosts() {
         },
         error: function() {
           // In case of an error, reset the Load More button text
-          jQuery('#load-more').text(loadMoreText ? loadMoreText : 'Load More');
+          jQuery('#load-more').text(loadMoreText ? loadMoreText : "Load more");
         }
       });
     });

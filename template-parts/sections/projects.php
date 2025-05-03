@@ -3,13 +3,13 @@
 $current_lang = pll_current_language();
 
 if ($current_lang === 'sl') {
-    $load_more_text = get_field('load_more_text_si', 'option');
     $button_text_visit = get_field('visit_website_text_si', 'option');
+    $load_more_text = get_field('load_more_text_si', 'option');
     $button_no_more = get_field('no_more_text_si', 'option');
     $button_loading = get_field('loading_text_si', 'option');
 } else {
-    $load_more_text = get_field('load_more_text', 'option');
     $button_text_visit = get_field('visit_website_text', 'option');
+    $load_more_text = get_field('load_more_text', 'option');
     $button_no_more = get_field('no_more_text', 'option');
     $button_loading = get_field('loading_text', 'option');
 }

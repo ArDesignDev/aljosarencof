@@ -2306,6 +2306,12 @@ button.swiper-pagination-bullet {
 .hero .hero-content .hero-subtitle, .hero .hero-content .hero-title {
   text-align: center;
 }
+.hero .hero-content .section-desc {
+  margin-bottom: 4rem;
+}
+.hero .hero-content .section-desc a {
+  text-decoration: underline;
+}
 .hero .hero-content .hero-title {
   max-width: 68vw;
   margin: 2rem auto;
