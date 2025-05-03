@@ -2746,7 +2746,7 @@ button.swiper-pagination-bullet {
 @media (max-width: 50em) {
   .services .services-nav li {
     width: 33.333%;
-    padding: 0;
+    padding: 0 1rem;
   }
 }
 .services .services-nav li a {
