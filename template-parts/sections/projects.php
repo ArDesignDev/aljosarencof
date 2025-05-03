@@ -1,3 +1,17 @@
+<?php 
+// acf
+$current_lang = pll_current_language();
+
+if ($current_lang === 'sl') {
+    $load_more_text = get_field('load_more_text_si', 'option');
+    $button_text_visit = get_field('visit_website_text_si', 'option');
+} else {
+    $load_more_text = get_field('load_more_text', 'option');
+    $button_text_visit = get_field('visit_website_text', 'option');
+}
+
+?>
+
 <section class="categories-section section-active" id="work">
     <div class="container">
         
@@ -29,10 +43,6 @@
                 ?>
         </div>
 
-        <!-- Load more button -->
-         <?php
-         $load_more_text = get_field('load_more_text', 'option');
-         ?>
         <?php if ($query->max_num_pages > 1): ?>
         <button class="btn-load-more" id="load-more" data-page="1"><?php echo $load_more_text; ?></button> 
         <?php endif; ?>
@@ -41,6 +51,5 @@
 
 <?php
 // button text
-$button_text_visit = get_field('visit_website_text', 'option');
 echo '<div style="display: none;" class="btn-visit-website">' . $button_text_visit . '</div>';
 ?>
