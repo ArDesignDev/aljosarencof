@@ -1,6 +1,6 @@
 <?php
 if (function_exists('pll_current_language') && pll_current_language() === 'sl') {
-    $btn_text = get_field('visit_website_text_sl', 'option');
+    $btn_text = get_field('visit_website_text_si', 'option');
 } else {
     $btn_text = get_field('visit_website_text', 'option');
 }
