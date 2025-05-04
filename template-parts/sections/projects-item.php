@@ -1,3 +1,11 @@
+<?php
+if (function_exists('pll_current_language') && pll_current_language() === 'sl') {
+    $btn_text = get_field('visit_website_text_sl', 'option');
+} else {
+    $btn_text = get_field('visit_website_text', 'option');
+}
+?>
+
 <div class="post-item fade-in">
     <div class="row row-center">
         
@@ -18,12 +26,8 @@
                 <div class="post-desc-text">
                     <?php echo wp_kses_post(get_field('project_description')); ?>
                 </div>
-                <!--
-                <div class="post-desc-skills">
-                    <?php echo wp_kses_post(get_field('skills_and_deliverables')); ?>
-                </div>-->
                 <a href="<?php echo esc_html(get_field('web_link')); ?>" target="_blank" class="btn-link">
-                    Visit website
+                    <?php echo esc_html($btn_text); ?>
                     <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 5h6v6h-1V6.707L6.104 18.604l-.707-.707L17.293 6H13z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
                 </a>
             </div>
