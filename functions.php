@@ -222,3 +222,23 @@ function redirect_posts_to_homepage() {
     }
 }
 add_action('template_redirect', 'redirect_posts_to_homepage');
+
+
+/**
+ * Disable Gutenberg (block) editor and fall back to Classic Editor
+ */
+function disable_gutenberg_editor() {
+    // Disable Gutenberg for posts and pages
+    add_filter( 'use_block_editor_for_post', '__return_false', 10 );
+    add_filter( 'use_block_editor_for_post_type', '__return_false', 10 );
+    
+    // Disable Gutenberg for widgets in Appearance → Widgets
+    add_filter( 'use_widgets_block_editor', '__return_false' );
+    
+    // Optionally, remove Gutenberg-related CSS/JS from front-end
+    add_action( 'wp_enqueue_scripts', function() {
+        wp_dequeue_style( 'global-styles' );
+        wp_dequeue_script( 'wp-polyfill' );
+    }, 100 );
+}
+add_action( 'init', 'disable_gutenberg_editor' );
