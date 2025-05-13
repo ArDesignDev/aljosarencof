@@ -104,5 +104,11 @@ if($meet_me_text) :
 
 <?php wp_footer(); ?>
 
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/aljosarencof?hide_landing_page_details=1&hide_gdpr_banner=1'});return false;">Schedule time with me</a>
+<!-- Calendly link widget end -->
+
 </body>
 </html>
